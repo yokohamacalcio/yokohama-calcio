@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yokohama Calcio - 公式サイト</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="immagini/logo-yokohama-calcio.png" alt="Yokohama Calcio" id="logo">
+        <h1>Yokohama Calcio</h1>
+        <p>2025年2月、横浜でイタリア人によって創設</p>
+        
+        <nav>
+            <a href="index.html">ホーム</a>
+            <a href="calendar.html">試合日程</a>
+            <a href="#gallery">フォトギャラリー</a>
+            <a href="#contact">お問い合わせ</a>
+        </nav>
+    </header>
+
+    <!-- Sezione Galleria -->
+    <section id="gallery">
+        <h2>フォトギャラリー</h2>
+        <div class="gallery-grid">
+            <a href="immagini/team1.jpg" data-lightbox="squadra" data-title="チーム写真">
+                <img src="immagini/team1-thumb.jpg" alt="チーム写真">
+            </a>
+            <a href="immagini/match1.jpg" data-lightbox="squadra" data-title="試合の様子">
+                <img src="immagini/match1-thumb.jpg" alt="試合の様子">
+            </a>
+            <!-- Aggiungi altre foto -->
+        </div>
+    </section>
+
+    <!-- Sezione Social -->
+    <section id="social">
+        <h2>SNSフォロー</h2>
+        <div class="social-links">
+            <a href="https://instagram.com/yokohamacalcio" target="_blank">
+                <img src="immagini/instagram-icon.png" alt="Instagram" width="40">
+            </a>
+            <a href="https://twitter.com/yokohamacalcio" target="_blank">
+                <img src="immagini/x-icon.png" alt="X (Twitter)" width="40">
+            </a>
+        </div>
+    </section>
+
+    <!-- Sezione Contatti -->
+    <section id="contact">
+        <h2>お問い合わせ</h2>
+        <div class="contact-methods">
+            <p><strong>代表者:</strong> [Il Tuo Nome]</p>
+            <p><strong>Email:</strong> <a href="mailto:info@yokohamcalcio.com">info@yokohamcalcio.com</a></p>
+            <p><strong>電話:</strong> +81 80-XXXX-XXXX</p>
+            <p><strong>練習場:</strong> 横浜市[区] [住所]</p>
+        </div>
+        
+        <form class="contact-form">
+            <input type="text" placeholder="お名前" required>
+            <input type="email" placeholder="メールアドレス" required>
+            <textarea placeholder="メッセージ"></textarea>
+            <button type="submit">送信</button>
+        </form>
+    </section>
+
+    <!-- Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+</body>
+</html>
