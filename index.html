@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yokohama Calcio - 横浜のイタリアンサッカークラブ</title>
-    <!-- Meta SEO -->
     <meta name="description" content="横浜で活動するアマチュアサッカーチーム。イタリアの情熱と日本の規律を融合したコミュニティ">
     <link rel="icon" href="/icon.png" type="image/png">
-    <!-- Stili originali -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -19,6 +17,9 @@
                 <img src="./immagini/logo.png" alt="Yokohama Calcio" class="logo" style="height:50px;width:auto">
                 <h1>Yokohama Calcio</h1>
             </div>
+            <button class="mobile-menu-toggle" aria-label="メニュー">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav class="main-nav">
                 <a href="#about" class="nav-link">チーム紹介</a>
                 <a href="#gallery" class="nav-link">ギャラリー</a>
@@ -42,11 +43,26 @@
         </div>
     </section>
 
-    <!-- Sezione About Originale -->
+    <!-- About Originale -->
     <section class="section" id="about">
         <div class="container">
             <h2 class="section-title"><i class="fas fa-flag"></i> Yokohama Calcioとは</h2>
-            <!-- ... contenuto originale ... -->
+            <div class="about-content">
+                <p>2025年2月に発足した横浜の国際サッカーチーム。イタリア人を中心に、日本人選手も多数在籍する多国籍なチームです。</p>
+                <div class="mission-box">
+                    <h3>私たちの信念</h3>
+                    <ul>
+                        <li>サッカーの<strong>楽しさ</strong>を第一に</li>
+                        <li>国籍やスキルを問わない<strong>オープンな参加</strong></li>
+                        <li>地域に根ざした<strong>コミュニティ活動</strong></li>
+                    </ul>
+                </div>
+                <div class="competitions">
+                    <h3>2025年度参加大会</h3>
+                    <p>🏆 <strong>横浜市民大会</strong> (秋季開催予定)</p>
+                    <p>⚽ 2026年 <strong>横浜市社会人サッカーリーグ</strong> 参戦準備中</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -54,40 +70,86 @@
     <section class="section" id="gallery">
         <div class="container" style="max-width:1000px;margin:0 auto">
             <h2 class="section-title"><i class="fas fa-camera"></i> フォトギャラリー</h2>
-            
             <div style="position:relative;overflow:hidden;border-radius:8px">
                 <div class="carousel-slide">
-                    <img src="./immagini/gallery/allenamento1.jpg" 
-                         alt="チーム練習風景" 
-                         style="width:100%;height:500px;object-fit:cover">
+                    <img src="./immagini/gallery/allenamento1.jpg" alt="チーム練習風景" style="width:100%;height:500px;object-fit:cover">
                 </div>
-                
-                <button id="prevBtn" style="position:absolute;top:50%;left:20px;transform:translateY(-50%);background:rgba(0,0,0,0.5);color:white;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer">
-                    &#10094;
-                </button>
-                <button id="nextBtn" style="position:absolute;top:50%;right:20px;transform:translateY(-50%);background:rgba(0,0,0,0.5);color:white;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer">
-                    &#10095;
-                </button>
+                <button id="prevBtn" style="position:absolute;top:50%;left:20px;transform:translateY(-50%);background:rgba(0,0,0,0.5);color:white;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer">&#10094;</button>
+                <button id="nextBtn" style="position:absolute;top:50%;right:20px;transform:translateY(-50%);background:rgba(0,0,0,0.5);color:white;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer">&#10095;</button>
             </div>
         </div>
     </section>
 
-    <!-- Altre sezioni originali -->
-    <section id="sponsors">...</section>
-    <section id="contact">...</section>
+    <!-- Sponsor Originale -->
+    <section class="section" id="sponsors">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-handshake"></i> スポンサーシップ</h2>
+            <p>Yokohama Calcioでは、地域企業様のご支援を募集しています。</p>
+            <div class="sponsor-banners">
+                <h3>メインスポンサー</h3>
+                <div class="main-sponsors">
+                    <div class="sponsor-banner large">スポンサー募集中</div>
+                    <div class="sponsor-banner large">スポンサー募集中</div>
+                </div>
+                <h3>スポンサー</h3>
+                <div class="regular-sponsors">
+                    <div class="sponsor-banner small">スポンサー募集中</div>
+                    <div class="sponsor-banner small">スポンサー募集中</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer con scritta preservata -->
+    <!-- Contact Originale con Social -->
+    <section class="section bg-light" id="contact">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-envelope"></i> お問い合わせ</h2>
+            <div class="contact-container">
+                <div class="social-section">
+                    <h3>SNSでフォロー</h3>
+                    <div class="social-links">
+                        <a href="https://x.com/yokohamacalcio" class="social-link x" target="_blank">
+                            <i class="fab fa-x-twitter"></i> X (Twitter)
+                        </a>
+                        <a href="https://instagram.com/yokohamacalcio" class="social-link instagram" target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formsubmit.co/tua@email.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">お名前</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">メッセージ</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> 送信する
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Originale -->
     <footer class="footer">
         <div class="container">
             <img src="./immagini/logo.png" alt="Yokohama Calcio" class="footer-logo">
             <div class="footer-info">
                 <p>© 2025 Yokohama Calcio</p>
+                <p>Mail: <a href="mailto:yokohamacalcio@gmail.com">yokohamacalcio@gmail.com</a></p>
                 <p class="credits">Designed with <i class="fas fa-heart"></i> in Yokohama</p>
             </div>
         </div>
     </footer>
 
-    <!-- Script Carousel Originale -->
+    <!-- Script Carousel -->
     <script>
         const images = [
             './immagini/gallery/allenamento1.jpg',
@@ -101,11 +163,7 @@
         const slide = document.querySelector('.carousel-slide');
         
         function updateCarousel() {
-            slide.innerHTML = `
-                <img src="${images[currentIndex]}" 
-                     alt="Allenamento ${currentIndex+1}" 
-                     style="width:100%;height:500px;object-fit:cover"
-                     loading="lazy">`;
+            slide.innerHTML = `<img src="${images[currentIndex]}" alt="Allenamento ${currentIndex+1}" style="width:100%;height:500px;object-fit:cover" loading="lazy">`;
         }
         
         document.getElementById('nextBtn').addEventListener('click', () => {
@@ -119,6 +177,11 @@
         });
         
         updateCarousel();
+        
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
     </script>
 </body>
 </html>
