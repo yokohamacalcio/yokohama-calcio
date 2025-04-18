@@ -1,71 +1,241 @@
-<!-- Sezione Contatti -->
-<section class="section" id="contact">
-  <div class="container">
-    <h2 class="section-title"><i class="fas fa-envelope"></i> お問い合わせ</h2>
-    
-    <!-- Form Contatti -->
-    <form class="contact-form" action="https://formspree.io/f/yokohamacalcio@gmail.com" method="POST">
-      <div class="form-group">
-        <label for="name">お名前</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">メールアドレス</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="subject">件名</label>
-        <select id="subject" name="subject">
-          <option value="sponsor">スポンサーについて</option>
-          <option value="general">一般お問い合わせ</option>
-          <option value="join">入団希望</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">メッセージ</label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">送信する</button>
-    </form>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yokohama Calcio - 横浜のイタリアンサッカークラブ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="description" content="横浜で活動するイタリアンサッカークラブ。Yokohama Calcioはイタリアの情熱と日本の規律を融合したサッカーを提供します">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-brand">
+                <img src="./immagini/logo.png" alt="Yokohama Calcio" class="logo">
+                <div class="header-title">
+                    <h1>Yokohama Calcio</h1>
+                    <p>横浜のイタリアンサッカークラブ</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="メニューを開く">
+                <i class="fas fa-bars"></i>
+            </button>
 
-    <!-- Social Links -->
-    <div class="social-links">
-      <a href="https://www.instagram.com/yokohamacalcio?igsh=OWZ3YjJ0NzQ2YmR3&utm_source=qr" 
-         class="social-link instagram" 
-         target="_blank"
-         aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://x.com/yokohamacalcio?s=21" 
-         class="social-link x" 
-         target="_blank"
-         aria-label="X (旧Twitter)">
-        <i class="fab fa-x-twitter"></i>
-      </a>
-    </div>
-  </div>
-</section>
+            <nav class="header-nav">
+                <a href="#about" class="nav-link">クラブ紹介</a>
+                <a href="#events" class="nav-link">イベント</a>
+                <a href="#gallery" class="nav-link">ギャラリー</a>
+                <a href="#sponsors" class="nav-link">スポンサー</a>
+                <a href="#contact" class="nav-link">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
 
-<!-- Google Calendar -->
-<section class="section bg-light">
-  <div class="container">
-    <h2 class="section-title"><i class="fas fa-calendar-alt"></i> イベント日程</h2>
-    <div class="calendar-container">
-      <iframe src="https://calendar.google.com/calendar/embed?src=TUO_ID@group.calendar.google.com&ctz=Asia%2FTokyo" 
-              frameborder="0" 
-              scrolling="no"></iframe>
-    </div>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <h2>Yokohama Calcio</h2>
+                <p class="hero-subtitle">イタリアの情熱を横浜へ</p>
+                <div class="color-stripes">
+                    <div class="stripe blue"></div>
+                    <div class="stripe white"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Instagram Feed -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title"><i class="fab fa-instagram"></i> Instagram</h2>
-    <div class="instagram-feed">
-      <!-- Widget da Elfsight -->
-      <script src="https://static.elfsight.com/platform/platform.js" defer></script>
-      <div class="elfsight-app-xxxxxx" data-elfsight-app-lazy></div>
-    </div>
-  </div>
-</section>
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> クラブ概要</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>創設</h3>
+                    <p>2025年2月、横浜在住のイタリア人サッカー愛好家によって設立されました。イタリアのカルチョ文化を日本に根付かせることを目的に活動しています。</p>
+                </div>
+                <div class="about-card">
+                    <h3>理念</h3>
+                    <p>「サッカーを通じた日伊文化交流」をモットーに、地域に根差したクラブ運営を目指します。技術指導だけでなく、イタリアサッカーの哲学を伝えます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventi - Google Calendar -->
+    <section class="section bg-light" id="events">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-calendar-alt"></i> イベント日程</h2>
+            <div class="calendar-container">
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Asia%2FTokyo&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&src=Y29udGFjdEB5b2tvaGFtYWNhbGNpby5jb20&color=%23039BE5" 
+                        style="border-width:0" 
+                        frameborder="0" 
+                        scrolling="no"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Gallery -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <h2 class="section-title"><i class="fab fa-instagram"></i> Instagramフォト</h2>
+            <div class="instagram-feed">
+                <!-- Elfsight Instagram Feed Widget -->
+                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                <div class="elfsight-app-xxxxxx" data-elfsight-app-lazy></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Section -->
+    <section class="section bg-light" id="sponsors">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-handshake"></i> スポンサー様</h2>
+            <div class="sponsors-grid">
+                <div class="sponsor-tier">
+                    <h3>プレミアムパートナー</h3>
+                    <div class="sponsor-logos">
+                        <img src="./immagini/sponsor/main.png" alt="プレミアムスポンサー" loading="lazy">
+                    </div>
+                </div>
+                <div class="sponsor-tier">
+                    <h3>オフィシャルサポーター</h3>
+                    <div class="sponsor-logos">
+                        <img src="./immagini/sponsor/supporter1.png" alt="サポーター1" loading="lazy">
+                        <img src="./immagini/sponsor/supporter2.png" alt="サポーター2" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="sponsor-cta">
+                <p>Yokohama Calcioを一緒に盛り上げませんか？</p>
+                <a href="#contact" class="btn">
+                    <i class="fas fa-envelope"></i> スポンサー情報を請求
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-envelope"></i> お問い合わせ</h2>
+            
+            <div class="contact-flex">
+                <!-- Form Contatti -->
+                <form class="contact-form" action="https://formspree.io/f/yokohamacalcio@gmail.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">お名前 *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">件名 *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>選択してください</option>
+                            <option value="sponsor">スポンサーについて</option>
+                            <option value="tryout">体験入団</option>
+                            <option value="general">その他のお問い合わせ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">メッセージ *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> 送信する
+                    </button>
+                </form>
+
+                <!-- Info Contatto -->
+                <div class="contact-info">
+                    <h3><i class="fas fa-envelope-open-text"></i> 直接連絡</h3>
+                    <p>
+                        <i class="fas fa-envelope"></i> 
+                        <a href="mailto:yokohamacalcio@gmail.com">yokohamacalcio@gmail.com</a>
+                    </p>
+                    
+                    <h3><i class="fas fa-share-alt"></i> ソーシャルメディア</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/yokohamacalcio?igsh=OWZ3YjJ0NzQ2YmR3&utm_source=qr" 
+                           class="social-link instagram" 
+                           target="_blank"
+                           aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://x.com/yokohamacalcio?s=21" 
+                           class="social-link x" 
+                           target="_blank"
+                           aria-label="X (旧Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <img src="./immagini/logo.png" alt="Yokohama Calcio" class="footer-logo" loading="lazy">
+                <div class="footer-title">
+                    <h3>Yokohama Calcio</h3>
+                    <p>横浜のイタリアンサッカークラブ</p>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#about">クラブ紹介</a>
+                <a href="#events">イベント</a>
+                <a href="#gallery">ギャラリー</a>
+                <a href="#sponsors">スポンサー</a>
+                <a href="#contact">お問い合わせ</a>
+            </div>
+            
+            <p class="copyright">
+                &copy; 2025 Yokohama Calcio. All Rights Reserved.
+                <span class="credits">Designed with <i class="fas fa-heart"></i> in Yokohama</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        // Menu Mobile
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.header-nav').classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Lazy Load Instagram Widget
+        window.addEventListener('load', function() {
+            const instagramFeed = document.querySelector('.instagram-feed');
+            if (instagramFeed) {
+                // Sostituisci con il tuo Elfsight Widget ID
+                instagramFeed.innerHTML = `
+                    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer><\/script>
+                    <div class="elfsight-app-xxxxxx" data-elfsight-app-lazy><\/div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
