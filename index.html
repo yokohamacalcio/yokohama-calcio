@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <!-- Favicon standard -->
-<link rel="icon" href="/favicon.png" type="image/png">
-
-<!-- Per Apple Safari (iPhone/iPad) -->
-<link rel="apple-touch-icon" href="/favicon.png">
-
-<!-- Per browser più vecchi (IE 10-) -->
-<link rel="shortcut icon" href="/favicon.png" type="image/png">
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; URL=https://yokohamacalcio.com">
-</head>
-<body>
-    <p>Redirecting to <a href="https://yokohamacalcio.com">https://yokohamacalcio.com</a>...</p>
-</body>
-</html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yokohama Calcio - 横浜のイタリアンサッカークラブ</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">
+    
+    <!-- Stili e Font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
+    
+    <!-- Meta Descrizione -->
     <meta name="description" content="横浜で活動するアマチュアサッカーチーム。イタリアの情熱と日本の規律を融合したコミュニティ">
+    
+    <!-- Redirect da www a non-www (solo se necessario) -->
+    <script>
+        if (window.location.hostname === 'www.yokohamacalcio.com') {
+            window.location.href = 'https://yokohamacalcio.com' + window.location.pathname;
+        }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -103,36 +101,36 @@
 
     <!-- Sponsor Section -->
     <section class="section" id="sponsors">
-  <div class="container">
-    <h2 class="section-title"><i class="fas fa-handshake"></i> スポンサーシップ</h2>
-    <p>Yokohama Calcioでは、地域企業様のご支援を募集しています。スポンサー様には以下の特典をご提供します：</p>
-    <ul>
-      <li>ユニフォームへのロゴ掲載</li>
-      <li>公式SNSでのプロモーション</li>
-      <li>試合時の看板設置</li>
-      <li>企業PRイベントへの協力</li>
-    </ul>
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-handshake"></i> スポンサーシップ</h2>
+            <p>Yokohama Calcioでは、地域企業様のご支援を募集しています。スポンサー様には以下の特典をご提供します：</p>
+            <ul>
+                <li>ユニフォームへのロゴ掲載</li>
+                <li>公式SNSでのプロモーション</li>
+                <li>試合時の看板設置</li>
+                <li>企業PRイベントへの協力</li>
+            </ul>
 
-    <div class="sponsor-banners">
-      <h3>メインスポンサー</h3>
-      <div class="main-sponsors">
-        <div class="sponsor-banner large">スポンサー募集中</div>
-        <div class="sponsor-banner large">スポンサー募集中</div>
-        <div class="sponsor-banner large">スポンサー募集中</div>
-      </div>
+            <div class="sponsor-banners">
+                <h3>メインスポンサー</h3>
+                <div class="main-sponsors">
+                    <div class="sponsor-banner large">スポンサー募集中</div>
+                    <div class="sponsor-banner large">スポンサー募集中</div>
+                    <div class="sponsor-banner large">スポンサー募集中</div>
+                </div>
 
-      <h3>スポンサー</h3>
-      <div class="regular-sponsors">
-        <div class="sponsor-banner small">スポンサー募集中</div>
-        <div class="sponsor-banner small">スポンサー募集中</div>
-        <div class="sponsor-banner small">スポンサー募集中</div>
-        <div class="sponsor-banner small">スポンサー募集中</div>
-        <div class="sponsor-banner small">スポンサー募集中</div>
-        <div class="sponsor-banner small">スポンサー募集中</div>
-      </div>
-    </div>
-  </div>
-</section>
+                <h3>スポンサー</h3>
+                <div class="regular-sponsors">
+                    <div class="sponsor-banner small">スポンサー募集中</div>
+                    <div class="sponsor-banner small">スポンサー募集中</div>
+                    <div class="sponsor-banner small">スポンサー募集中</div>
+                    <div class="sponsor-banner small">スポンサー募集中</div>
+                    <div class="sponsor-banner small">スポンサー募集中</div>
+                    <div class="sponsor-banner small">スポンサー募集中</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section class="section bg-light" id="contact">
