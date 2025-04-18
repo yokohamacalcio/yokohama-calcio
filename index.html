@@ -26,9 +26,8 @@
 
             <nav class="header-nav">
                 <a href="#about" class="nav-link">クラブ紹介</a>
-                <a href="#activity" class="nav-link">活動内容</a>
-                <a href="#sponsors" class="nav-link">スポンサー</a>
                 <a href="#gallery" class="nav-link">フォトギャラリー</a>
+                <a href="#sponsors" class="nav-link">スポンサー</a>
                 <a href="#contact" class="nav-link">お問い合わせ</a>
             </nav>
         </div>
@@ -60,25 +59,6 @@
                 <div class="about-card">
                     <h3>理念</h3>
                     <p>イタリアサッカーの技術と情熱を、横浜の地で育み広めることを目的としています。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Activity Section -->
-    <section class="section bg-light" id="activity">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-calendar-alt"></i> 活動内容</h2>
-            <div class="activity-list">
-                <div class="activity-item">
-                    <i class="fas fa-futbol activity-icon"></i>
-                    <h3>週末練習</h3>
-                    <p>毎週土曜日 9:00-12:00<br>横浜市フットサル場</p>
-                </div>
-                <div class="activity-item">
-                    <i class="fas fa-handshake activity-icon"></i>
-                    <h3>交流試合</h3>
-                    <p>月1回 他クラブと親善試合</p>
                 </div>
             </div>
         </div>
@@ -132,22 +112,20 @@
     <section class="section" id="contact">
         <div class="container">
             <h2 class="section-title"><i class="fas fa-envelope"></i> お問い合わせ</h2>
-            <div class="contact-flex">
-                <div class="contact-info">
-                    <h3>Yokohama Calcio</h3>
-                    <p><i class="fas fa-envelope"></i> yokohamacalcio@gmail.com</p>
-                    <div class="social-links">
-                        <a href="https://instagram.com/yokohamacalcio" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://twitter.com/yokohamacalcio" target="_blank">
-                            <i class="fab fa-x-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-map">
-                    <iframe src="https://maps.google.com/maps?q=横浜市&output=embed" 
-                            allowfullscreen></iframe>
+            <div class="contact-info">
+                <h3>Yokohama Calcio</h3>
+                <p><i class="fas fa-envelope"></i> yokohamacalcio@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/yokohamacalcio?igsh=OWZ3YjJ0NzQ2YmR3&utm_source=qr" 
+                       target="_blank" 
+                       aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/yokohamacalcio?s=21" 
+                       target="_blank" 
+                       aria-label="X (旧Twitter)">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -167,7 +145,33 @@
         </div>
     </footer>
 
+    <!-- Lightbox JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <script src="./js/script.js"></script>
+    
+    <!-- Sistema per aggiornamenti automatici -->
+    <script>
+        // Carica gli eventi da Google Sheets
+        function loadEvents() {
+            const sheetId = 'TUO_SHEET_ID';
+            const apiKey = 'TUO_API_KEY';
+            fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Eventi!A1:D10?key=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Elabora i dati qui
+                    console.log(data.values);
+                });
+        }
+        
+        // Inizializza
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu mobile
+            document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+                document.querySelector('.header-nav').classList.toggle('active');
+            });
+            
+            // Opzionale: carica eventi automaticamente
+            // loadEvents();
+        });
+    </script>
 </body>
 </html>
