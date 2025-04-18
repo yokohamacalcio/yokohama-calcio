@@ -1,177 +1,71 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yokohama Calcio - 横浜のイタリアンサッカークラブ</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-brand">
-                <img src="./immagini/logo.png" alt="Yokohama Calcio" class="logo">
-                <div class="header-title">
-                    <h1>Yokohama Calcio</h1>
-                    <p>横浜のイタリアンサッカークラブ</p>
-                </div>
-            </div>
-            
-            <button class="mobile-menu-toggle" aria-label="メニューを開く">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <nav class="header-nav">
-                <a href="#about" class="nav-link">クラブ紹介</a>
-                <a href="#gallery" class="nav-link">フォトギャラリー</a>
-                <a href="#sponsors" class="nav-link">スポンサー</a>
-                <a href="#contact" class="nav-link">お問い合わせ</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay">
-            <div class="container">
-                <h2>Yokohama Calcio</h2>
-                <p class="hero-subtitle">イタリアの情熱を横浜へ</p>
-                <div class="color-stripes">
-                    <div class="stripe blue"></div>
-                    <div class="stripe white"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-info-circle"></i> クラブ概要</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <h3>創設</h3>
-                    <p>2025年2月、横浜在住のイタリア人サッカー愛好家によって設立されました。</p>
-                </div>
-                <div class="about-card">
-                    <h3>理念</h3>
-                    <p>イタリアサッカーの技術と情熱を、横浜の地で育み広めることを目的としています。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section" id="gallery">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-camera"></i> フォトギャラリー</h2>
-            <div class="gallery-grid">
-                <a href="./immagini/gallery/1.jpg" data-lightbox="gallery" data-title="Yokohama Calcio 練習風景">
-                    <img src="./immagini/gallery/1-thumb.jpg" alt="チーム練習">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </a>
-                <!-- Aggiungi altre 5-7 foto -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Sponsors Section -->
-    <section class="section bg-light" id="sponsors">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-star"></i> スポンサー様</h2>
-            <div class="sponsors-grid">
-                <div class="sponsor-tier">
-                    <h3>メインスポンサー</h3>
-                    <div class="sponsor-logos">
-                        <img src="./immagini/sponsor/main.png" alt="メインスポンサー">
-                    </div>
-                </div>
-                <div class="sponsor-tier">
-                    <h3>オフィシャルサポーター</h3>
-                    <div class="sponsor-logos">
-                        <img src="./immagini/sponsor/supporter1.png" alt="サポーター1">
-                        <img src="./immagini/sponsor/supporter2.png" alt="サポーター2">
-                    </div>
-                </div>
-            </div>
-            <div class="sponsor-cta">
-                <p>Yokohama Calcioを応援しませんか？</p>
-                <a href="mailto:sponsor@yokohamacalcio.com" class="btn">
-                    <i class="fas fa-envelope"></i> スポンサー情報
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="container">
-            <h2 class="section-title"><i class="fas fa-envelope"></i> お問い合わせ</h2>
-            <div class="contact-info">
-                <h3>Yokohama Calcio</h3>
-                <p><i class="fas fa-envelope"></i> yokohamacalcio@gmail.com</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/yokohamacalcio?igsh=OWZ3YjJ0NzQ2YmR3&utm_source=qr" 
-                       target="_blank" 
-                       aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://x.com/yokohamacalcio?s=21" 
-                       target="_blank" 
-                       aria-label="X (旧Twitter)">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-brand">
-                <img src="./immagini/logo.png" alt="Yokohama Calcio" class="footer-logo">
-                <div class="footer-title">
-                    <h3>Yokohama Calcio</h3>
-                    <p>横浜のイタリアンサッカークラブ</p>
-                </div>
-            </div>
-            <p class="copyright">&copy; 2025 Yokohama Calcio - All Rights Reserved</p>
-        </div>
-    </footer>
-
-    <!-- Lightbox JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<!-- Sezione Contatti -->
+<section class="section" id="contact">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-envelope"></i> お問い合わせ</h2>
     
-    <!-- Sistema per aggiornamenti automatici -->
-    <script>
-        // Carica gli eventi da Google Sheets
-        function loadEvents() {
-            const sheetId = 'TUO_SHEET_ID';
-            const apiKey = 'TUO_API_KEY';
-            fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Eventi!A1:D10?key=${apiKey}`)
-                .then(response => response.json())
-                .then(data => {
-                    // Elabora i dati qui
-                    console.log(data.values);
-                });
-        }
-        
-        // Inizializza
-        document.addEventListener('DOMContentLoaded', function() {
-            // Menu mobile
-            document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-                document.querySelector('.header-nav').classList.toggle('active');
-            });
-            
-            // Opzionale: carica eventi automaticamente
-            // loadEvents();
-        });
-    </script>
-</body>
-</html>
+    <!-- Form Contatti -->
+    <form class="contact-form" action="https://formspree.io/f/yokohamacalcio@gmail.com" method="POST">
+      <div class="form-group">
+        <label for="name">お名前</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">メールアドレス</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">件名</label>
+        <select id="subject" name="subject">
+          <option value="sponsor">スポンサーについて</option>
+          <option value="general">一般お問い合わせ</option>
+          <option value="join">入団希望</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">メッセージ</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">送信する</button>
+    </form>
+
+    <!-- Social Links -->
+    <div class="social-links">
+      <a href="https://www.instagram.com/yokohamacalcio?igsh=OWZ3YjJ0NzQ2YmR3&utm_source=qr" 
+         class="social-link instagram" 
+         target="_blank"
+         aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://x.com/yokohamacalcio?s=21" 
+         class="social-link x" 
+         target="_blank"
+         aria-label="X (旧Twitter)">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Google Calendar -->
+<section class="section bg-light">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-calendar-alt"></i> イベント日程</h2>
+    <div class="calendar-container">
+      <iframe src="https://calendar.google.com/calendar/embed?src=TUO_ID@group.calendar.google.com&ctz=Asia%2FTokyo" 
+              frameborder="0" 
+              scrolling="no"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram Feed -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title"><i class="fab fa-instagram"></i> Instagram</h2>
+    <div class="instagram-feed">
+      <!-- Widget da Elfsight -->
+      <script src="https://static.elfsight.com/platform/platform.js" defer></script>
+      <div class="elfsight-app-xxxxxx" data-elfsight-app-lazy></div>
+    </div>
+  </div>
+</section>
