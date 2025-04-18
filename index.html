@@ -4,31 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yokohamacalcio - ホーム</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="./index.html">ホーム</a>
-            <a href="./squadra.html">チーム</a>
-            <a href="./calendario.html">試合日程</a>
-            <a href="./contatti.html">お問い合わせ</a>
-        </nav>
-        <img src="./immagini/logo.png" alt="yokohamacalcio" id="logo">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="./immagini/logo.png" alt="yokohamacalcio" class="logo">
+                <div class="team-info">
+                    <h1>yokohamacalcio</h1>
+                    <p>横浜のイタリアンサッカーチーム</p>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <a href="./index.html" class="active"><i class="fas fa-home"></i> ホーム</a>
+                <a href="./squadra.html"><i class="fas fa-users"></i> チーム</a>
+                <a href="./calendario.html"><i class="fas fa-calendar-alt"></i> 試合</a>
+                <a href="./contatti.html"><i class="fas fa-envelope"></i> 連絡</a>
+                <div class="social-links">
+                    <a href="https://instagram.com/yokohamacalcio" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/yokohamacalcio" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </nav>
+            
+            <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <img src="./immagini/hero.jpg" alt="yokohamacalcio チーム写真">
-        <h1>横浜で生まれたイタリアンサッカー</h1>
+        <div class="hero-content">
+            <h2>情熱は国境を越える</h2>
+            <p>イタリアの情熱と日本の規律を融合したサッカー</p>
+            <a href="./calendario.html" class="cta-button">試合日程を見る <i class="fas fa-arrow-right"></i></a>
+        </div>
     </section>
 
-    <section class="news">
-        <h2>最新ニュース</h2>
-        <article>
-            <h3>新ユニフォーム発表</h3>
-            <p>2025年シーズンの新デザインを公開しました...</p>
-        </article>
-    </section>
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Sezione Sponsor -->
+        <section class="sponsors-section">
+            <h3><i class="fas fa-star"></i> 公式スポンサー</h3>
+            <div class="sponsors-grid">
+                <img src="./immagini/sponsor/sponsor1.png" alt="Sponsor 1">
+                <img src="./immagini/sponsor/sponsor2.png" alt="Sponsor 2">
+                <img src="./immagini/sponsor/sponsor3.png" alt="Sponsor 3">
+            </div>
+        </section>
+
+        <!-- Ultime News -->
+        <section class="news-section">
+            <h3><i class="fas fa-newspaper"></i> 最新ニュース</h3>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-date">2025.06.15</div>
+                    <h4>新ユニフォーム発表</h4>
+                    <p>2025年シーズンの新デザインを公開しました...</p>
+                    <a href="#" class="read-more">続きを読む</a>
+                </article>
+                <!-- Altre news -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 yokohamacalcio - 横浜で生まれたイタリアンサッカーチーム</p>
+            <p>連絡先: <a href="mailto:yokohamacalcio@gmail.com">yokohamacalcio@gmail.com</a></p>
+        </div>
+    </footer>
 
     <script src="./js/script.js"></script>
 </body>
