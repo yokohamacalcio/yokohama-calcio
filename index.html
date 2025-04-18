@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yokohama Calcio - 横浜のイタリアンサッカークラブ</title>
+    <title>Yokohama Calcio | 横浜のアマチュアサッカーチーム | イタリアンスタイル</title>
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="横浜で活動するアマチュアサッカーチーム。イタリアの情熱と日本の規律を融合したコミュニティ">
+    <meta name="keywords" content="横浜 サッカー, Yokohama Calcio, アマチュアサッカー, イタリアサッカー, サッカーチーム">
+    <meta name="author" content="Yokohama Calcio">
+    <link rel="canonical" href="https://yokohamacalcio.com">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Yokohama Calcio - 横浜のイタリアンスタイルサッカーチーム">
+    <meta property="og:description" content="イタリアの情熱と日本の規律を融合した横浜のサッカーチーム">
+    <meta property="og:image" content="https://yokohamacalcio.com/immagini/logo.png">
+    <meta property="og:url" content="https://yokohamacalcio.com">
+    <meta property="og:type" content="website">
     
     <!-- Favicon -->
     <link rel="icon" href="/favicon.png" type="image/png">
@@ -14,104 +27,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
     
-    <!-- Meta Descrizione -->
-    <meta name="description" content="横浜で活動するアマチュアサッカーチーム。イタリアの情熱と日本の規律を融合したコミュニティ">
-
-    <style>
-        /* CAROUSEL STYLES */
-        .carousel-section {
-            padding: 40px 0;
-            background: #f8f9fa;
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsTeam",
+      "name": "Yokohama Calcio",
+      "url": "https://yokohamacalcio.com",
+      "logo": "https://yokohamacalcio.com/immagini/logo.png",
+      "description": "横浜で活動するアマチュアサッカーチーム",
+      "foundingDate": "2025-02",
+      "sport": "サッカー",
+      "location": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Yokohama",
+          "addressCountry": "JP"
         }
-        
-        .carousel-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .carousel-slide {
-            display: flex;
-            width: 100%;
-            height: 500px;
-            transition: transform 0.5s ease;
-        }
-        
-        .carousel-slide img {
-            min-width: 100%;
-            object-fit: cover;
-        }
-        
-        .carousel-caption {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            right: 0;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-        
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.7);
-            color: #333;
-            border: none;
-            padding: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s;
-        }
-        
-        .carousel-btn:hover {
-            background: rgba(255,255,255,0.9);
-        }
-        
-        #prevBtn {
-            left: 20px;
-            border-radius: 50% 0 0 50%;
-        }
-        
-        #nextBtn {
-            right: 20px;
-            border-radius: 0 50% 50% 0;
-        }
-        
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-        }
-        
-        .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ccc;
-            margin: 0 8px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .indicator.active {
-            background: #1e88e5;
-        }
-    </style>
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo-title">
-                <img src="./immagini/logo.png" alt="Yokohama Calcio" class="logo">
+                <img src="./immagini/logo.png" alt="Yokohama Calcio - 横浜サッカーチームロゴ" width="120" height="80">
                 <h1>Yokohama Calcio</h1>
             </div>
             
@@ -129,7 +72,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-label="メインビジュアル">
         <div class="hero-overlay">
             <div class="container">
                 <h2>横浜に咲くイタリアの情熱</h2>
@@ -145,22 +88,22 @@
     <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-flag"></i> Yokohama Calcioとは</h2>
+            <h2><i class="fas fa-flag" aria-hidden="true"></i> Yokohama Calcioとは</h2>
             <div class="about-content">
-                <p>2025年2月に発足した横浜のサッカーチーム。チームワークと攻撃的なスタイルを重視し、常に進化を目指す情熱的なプレーが魅力です。</p>
+                <p>2025年2月に発足した横浜の国際サッカーチーム。イタリア人を中心に、日本人選手も多数在籍する多国籍なチームです。</p>
                 
                 <div class="mission-box">
                     <h3>私たちの信念</h3>
                     <ul>
                         <li>サッカーの<strong>楽しさ</strong>を第一に</li>
-                        <li>サッカー歴やスキルを問わない<strong>オープンな参加</strong></li>
+                        <li>国籍やスキルを問わない<strong>オープンな参加</strong></li>
                         <li>地域に根ざした<strong>コミュニティ活動</strong></li>
                     </ul>
                 </div>
 
                 <div class="competitions">
                     <h3>2025年度参加大会</h3>
-                    <p>🏆 <strong>横浜市民大会</strong> (5月から開催) </p>
+                    <p>🏆 <strong>横浜市民大会</strong> (秋季開催予定)</p>
                     <p>⚽ 2026年 <strong>横浜市社会人サッカーリーグ</strong> 参戦準備中</p>
                 </div>
             </div>
@@ -168,35 +111,39 @@
     </section>
 
     <!-- Gallery Section - CAROUSEL -->
-    <section class="carousel-section" id="gallery">
+    <section class="carousel-section" id="gallery" aria-label="フォトギャラリー">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-camera"></i> フォトギャラリー</h2>
+            <h2><i class="fas fa-camera" aria-hidden="true"></i> フォトギャラリー</h2>
             
             <div class="carousel-container">
                 <div class="carousel-slide">
-                    <img src="./immagini/gallery/allenamento1.jpg" alt="Allenamento 1">
+                    <img src="./immagini/gallery/allenamento1.jpg" 
+                         alt="Yokohama Calcio チーム練習風景（フィールドトレーニング）" 
+                         width="800" 
+                         height="500"
+                         loading="lazy">
                     <div class="carousel-caption">チーム練習風景 #1</div>
                 </div>
                 
-                <button class="carousel-btn" id="prevBtn">&#10094;</button>
-                <button class="carousel-btn" id="nextBtn">&#10095;</button>
+                <button class="carousel-btn" id="prevBtn" aria-label="前の画像">&#10094;</button>
+                <button class="carousel-btn" id="nextBtn" aria-label="次の画像">&#10095;</button>
             </div>
             
             <div class="carousel-indicators">
-                <span class="indicator active" data-slide="0"></span>
-                <span class="indicator" data-slide="1"></span>
-                <span class="indicator" data-slide="2"></span>
-                <span class="indicator" data-slide="3"></span>
-                <span class="indicator" data-slide="4"></span>
-                <span class="indicator" data-slide="5"></span>
+                <span class="indicator active" data-slide="0" aria-label="スライド1"></span>
+                <span class="indicator" data-slide="1" aria-label="スライド2"></span>
+                <span class="indicator" data-slide="2" aria-label="スライド3"></span>
+                <span class="indicator" data-slide="3" aria-label="スライド4"></span>
+                <span class="indicator" data-slide="4" aria-label="スライド5"></span>
+                <span class="indicator" data-slide="5" aria-label="スライド6"></span>
             </div>
         </div>
     </section>
 
     <!-- Sponsor Section -->
-    <section class="section" id="sponsors">
+    <section class="section" id="sponsors" aria-label="スポンサー情報">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-handshake"></i> スポンサーシップ</h2>
+            <h2><i class="fas fa-handshake" aria-hidden="true"></i> スポンサーシップ</h2>
             <p>Yokohama Calcioでは、地域企業様のご支援を募集しています。スポンサー様には以下の特典をご提供します：</p>
             <ul>
                 <li>ユニフォームへのロゴ掲載</li>
@@ -227,26 +174,29 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section bg-light" id="contact">
+    <section class="section bg-light" id="contact" aria-label="お問い合わせ">
         <div class="container">
-            <h2 class="section-title"><i class="fas fa-envelope"></i> お問い合わせ</h2>
+            <h2><i class="fas fa-envelope" aria-hidden="true"></i> お問い合わせ</h2>
             
             <div class="contact-container">
                 <!-- Social Media -->
                 <div class="social-section">
                     <h3>SNSでフォロー</h3>
                     <div class="social-links">
-                        <a href="https://x.com/yokohamacalcio?s=21" class="social-link x" target="_blank">
-                            <i class="fab fa-x-twitter"></i> X (Twitter)
+                        <a href="https://x.com/yokohamacalcio?s=21" class="social-link x" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-x-twitter" aria-hidden="true"></i> X (Twitter)
                         </a>
-                        <a href="https://www.instagram.com/yokohamacalcio?igsh=OWZ3YjJ0NzQ2YmR3&utm_source=qr" class="social-link instagram" target="_blank">
-                            <i class="fab fa-instagram"></i> Instagram
+                        <a href="https://www.instagram.com/yokohamacalcio?igsh=OWZ3YjJ0NzQ2YmR3&utm_source=qr" class="social-link instagram" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
                         </a>
                     </div>
                 </div>
                 
                 <!-- Contact Form -->
-                <form action="https://formsubmit.co/yokohamacalcio@gmail.com" method="POST">
+                <form class="contact-form" action="https://formsubmit.co/tua@email.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nuovo messaggio da Yokohama Calcio">
+                    <input type="hidden" name="_next" value="https://yokohamacalcio.com/grazie.html">
+                    
                     <div class="form-group">
                         <label for="name">お名前</label>
                         <input type="text" id="name" name="name" required>
@@ -260,7 +210,7 @@
                         <textarea id="message" name="message" required></textarea>
                     </div>
                     <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> 送信する
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i> 送信する
                     </button>
                 </form>
             </div>
@@ -268,26 +218,30 @@
     </section>
 
     <!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <!-- Logo e informazioni esistenti -->
-            <div class="footer-info">
-                <img src="./immagini/logo.png" alt="Yokohama Calcio" class="footer-logo">
-                <p>Mail: <a href="mailto:yokohamacalcio@gmail.com">yokohamacalcio@gmail.com</a></p>
-            </div>
-            
-            <!-- Nuova sezione copyright -->
-            <div class="copyright-section">
-                <p class="copyright">
-                    &copy; 2025 Yokohama Calcio. All Rights Reserved.
-                    <span class="credits">Designed with <i class="fas fa-heart"></i> in Yokohama</span>
-                </p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="./immagini/logo.png" alt="Yokohama Calcio ロゴ" width="100" height="70" loading="lazy">
+                    <p>Mail: <a href="mailto:yokohamacalcio@gmail.com">yokohamacalcio@gmail.com</a></p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="/privacy.html">プライバシーポリシー</a>
+                    <a href="/sitemap.xml">サイトマップ</a>
+                </div>
+                
+                <div class="copyright-section">
+                    <p class="copyright">
+                        &copy; 2025 Yokohama Calcio. All Rights Reserved.
+                        <span class="credits">Designed with <i class="fas fa-heart" aria-hidden="true"></i> in Yokohama</span>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
+    <!-- Scripts -->
     <script>
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
@@ -307,15 +261,14 @@
         // CAROUSEL SCRIPT
         const slide = document.querySelector('.carousel-slide');
         const images = [
-            { src: './immagini/gallery/allenamento1.jpg', caption: 'チーム練習風景 #1' },
-            { src: './immagini/gallery/allenamento2.jpg', caption: '技術トレーニング' },
-            { src: './immagini/gallery/allenamento3.jpg', caption: 'フィジカルトレーニング' },
-            { src: './immagini/gallery/allenamento4.jpg', caption: 'チームビルディング' },
-            { src: './immagini/gallery/allenamento5.jpg', caption: 'ウォーミングアップ' },
-            { src: './immagini/gallery/allenamento6.jpg', caption: 'チーム練習風景 #2' }
+            { src: './immagini/gallery/allenamento1.jpg', caption: 'チーム練習風景 #1', alt: 'Yokohama Calcio フィールドトレーニング' },
+            { src: './immagini/gallery/allenamento2.jpg', caption: '技術トレーニング', alt: 'Yokohama Calcio 技術練習' },
+            { src: './immagini/gallery/allenamento3.jpg', caption: 'フィジカルトレーニング', alt: 'Yokohama Calcio 体力トレーニング' },
+            { src: './immagini/gallery/allenamento4.jpg', caption: 'チームビルディング', alt: 'Yokohama Calcio チーム活動' },
+            { src: './immagini/gallery/allenamento5.jpg', caption: '試合前ウォーミングアップ', alt: 'Yokohama Calcio 試合準備' },
+            { src: './immagini/gallery/allenamento6.jpg', caption: 'チーム練習風景 #2', alt: 'Yokohama Calcio グループ練習' }
         ];
 
-        // Initialize carousel
         let counter = 0;
         const size = 100;
         const indicators = document.querySelectorAll('.indicator');
@@ -323,7 +276,7 @@
 
         // Load first image
         slide.innerHTML = `
-            <img src="${images[0].src}" alt="Allenamento ${counter+1}">
+            <img src="${images[0].src}" alt="${images[0].alt}" width="800" height="500" loading="lazy">
             <div class="carousel-caption">${images[0].caption}</div>
         `;
 
@@ -368,7 +321,7 @@
 
         function updateCarousel() {
             slide.innerHTML = `
-                <img src="${images[counter].src}" alt="Allenamento ${counter+1}">
+                <img src="${images[counter].src}" alt="${images[counter].alt}" width="800" height="500" loading="lazy">
                 <div class="carousel-caption">${images[counter].caption}</div>
             `;
             
