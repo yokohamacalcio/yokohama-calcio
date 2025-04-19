@@ -112,56 +112,51 @@ body {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  /* mantiene le icone social visibili */
-  .header-social-icons {
+  /* Container del header mantiene layout orizzontale */
+  .header .container {
     display: flex;
-    order: 3; /* per restare sulla destra, sotto l’hamburger */
+    align-items: center;
+    justify-content: space-between;
   }
 
-  /* hamburger a destra */
+  /* Hamburger visibile a destra */
   .mobile-menu-toggle {
     display: block;
-    order: 2;
     background: none;
     border: none;
     font-size: 1.6rem;
     color: var(--azzurro);
-    cursor: pointer;
+    z-index: 1100; /* sopra il nav */
   }
 
-  /* logo + titolo a sinistra */
-  .logo-title {
-    order: 1;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-  }
-
-  /* nav nascosto di default */
+  /* Nav di base nascosto e posizionato */
   .main-nav {
     display: none;
-    flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    right: 0;
     background: var(--bianco);
+    flex-direction: column;
     padding: 1rem 0;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 999;
+    z-index: 1050;
   }
 
-  /* nav visibile quando .active */
+  /* Nav visibile quando attivo */
   .main-nav.active {
     display: flex;
   }
 
-  /* link del menu mobile */
+  /* Stile dei link nel menu mobile */
   .main-nav .nav-link {
     padding: 0.8rem 1.5rem;
     width: 100%;
     border-bottom: 1px solid #eee;
+    color: var(--grigio);
+  }
+  .main-nav .nav-link:hover {
+    background: var(--grigio-chiaro);
   }
 }
 
