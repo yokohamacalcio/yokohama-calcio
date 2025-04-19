@@ -1,5 +1,3 @@
-// yokohamacalcio/js/menu-toggle.js
-
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.querySelector('.mobile-menu-toggle');
   const nav = document.querySelector('.main-nav');
@@ -7,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   toggleButton.addEventListener('click', () => {
     nav.classList.toggle('active');
-    
-    // Cambia icona da hamburger a X e viceversa
+
+    // Cambia icona hamburger <-> chiusura
     if (icon.classList.contains('fa-bars')) {
       icon.classList.remove('fa-bars');
       icon.classList.add('fa-times');
