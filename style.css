@@ -104,11 +104,29 @@ body {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  .header .container {
-    flex-direction: row;
-    justify-content: space-between;
+  .main-nav {
+    display: none;
+    position: sticky;
+    top: 60px; /* Altezza dell'header */
+    left: 0;
+    right: 0;
+    background: var(--bianco);
+    flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    z-index: 1001;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    max-height: calc(100vh - 60px); /* Previene overflow */
+    overflow-y: auto;
   }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+}
 
   /* --- Mobile Menu Toggle --- */
 .mobile-menu-toggle {
