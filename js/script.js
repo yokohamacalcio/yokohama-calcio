@@ -7,35 +7,43 @@
 // 1. MENU MOBILE (Responsive)
 // ======================
 document.addEventListener('DOMContentLoaded', function() {
-    // Crea il pulsante menu per mobile
     const menuToggle = document.createElement('button');
     menuToggle.className = 'mobile-menu-toggle';
     menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
     document.querySelector('header').prepend(menuToggle);
 
-    // Elementi UI
     const nav = document.querySelector('nav');
     const icon = menuToggle.querySelector('i');
+    const header = document.querySelector('.header');
 
-    // Gestione click
     menuToggle.addEventListener('click', function() {
-        // Animazione icona
         icon.classList.toggle('fa-bars');
         icon.classList.toggle('fa-times');
-        
-        // Mostra/nascondi menu
         nav.classList.toggle('active');
+        
+        // Aggiunge classe allo header per tracking
+        header.classList.toggle('menu-open');
     });
 
-    // Reset su resize
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
             nav.classList.remove('active');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
+            header.classList.remove('menu-open');
         }
     });
-});
+
+    // Chiude il menu cliccando fuori
+    document.addEventListener('click', function(e) {
+        if (!header.contains(e.target)) {
+            nav.classList.remove('active');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+            header.classList.remove('menu-open');
+        }
+    });
+});;
 
 // ======================
 // 2. CAROSELLO SPONSOR
