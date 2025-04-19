@@ -25,139 +25,84 @@ body {
 }
 
 /* ========== HEADER ========== */
-/* HEADER BASE */
 .header {
-  background: var(--bianco);
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.header {
+    background: var(--bianco);
+    padding: 15px 0;
+    box-shadow: var(--ombra);
     position: sticky;
     top: 0;
-    width: 100%;
-    background: var(--bianco);
-    z-index: 999;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 100;
 }
 
-/* Logo + Titolo */
 .logo-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-title h1 {
-  color: var(--azzurro);
-  font-size: 1.5rem;
-  margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .logo {
-  height: 40px;
+    height: 50px;
 }
 
-/* Nav principale - Desktop */
+.header h1 {
+    color: var(--azzurro);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--azzurro);
+    cursor: pointer;
+}
+
 .main-nav {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
 }
 
-.nav-link {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: color 0.3s ease;
+.main-nav a {
+    color: var(--grigio);
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
 }
 
-.nav-link:hover {
-  color: var(--azzurro);
+.main-nav a:hover {
+    color: var(--azzurro);
+    border-color: var(--azzurro);
 }
 
-/* Social Icons */
 .header-social-icons {
-  display: flex;
-  gap: 15px;
-  align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 15px;
 }
 
 .header-social-icons a {
-  color: #333;
-  font-size: 20px;
-  transition: color 0.3s ease;
+    color: #fff;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
 }
 
 .header-social-icons a:hover {
-  color: var(--azzurro);
+    color: #e74c3c;
 }
 
-/* Hamburger */
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-}
-
-/* ========== RESPONSIVE ========== */
+/* Nascondi su mobile */
 @media (max-width: 768px) {
-  .main-nav {
-    display: none;
-    flex-direction: column;
-    background: var(--bianco);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
-
-  .main-nav.active {
-    display: flex;
-  }
-
-  .header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
-  }
-
-  .logo-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    order: 1;
-  }
-
-  .mobile-menu-toggle {
-    display: block;
-    order: 2;
-    font-size: 1.6rem;
-    background: none;
-    border: none;
-    color: var(--azzurro);
-    margin-left: auto;
-  }
-
-  .header-social-icons {
-    display: none;
-  }
+    .header-social-icons {
+        display: none;
+    }
 }
 
 /* ========== HERO ========== */
