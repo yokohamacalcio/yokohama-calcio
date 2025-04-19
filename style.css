@@ -9,6 +9,22 @@
 }
 
 /* ========== BASE ========== */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: var(--grigio);
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* ========== HEADER ========== */
 /* --- Header Sticky --- */
 .sticky-header {
   position: sticky;
@@ -88,7 +104,6 @@
     align-items: center;
   }
 }
-
 
 /* ========== HERO ========== */
 .hero {
