@@ -9,22 +9,6 @@
 }
 
 /* ========== BASE ========== */
-body {
-    font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.6;
-    color: var(--grigio);
-    margin: 0;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
-
-/* HEADER BASE */
 /* Sticky Header */
 .header {
   position: sticky;
@@ -92,7 +76,7 @@ body {
   .main-nav {
     display: none;
     position: absolute;
-    top: 100%; /* Modificato da 60px a 100% */
+    top: 60px;
     left: 0;
     right: 0;
     background: var(--bianco);
@@ -100,19 +84,12 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1rem 0;
-    z-index: 1001; /* Aumentato lo z-index */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Aggiunta ombra */
+    z-index: 999;
   }
 
-  .header {
-    position: relative; /* Aggiunto per il corretto posizionamento */
+  .main-nav.active {
+    display: flex;
   }
-}
-
-.main-nav.active {
-  display: flex;
-  /* Altri stili */
-}
 
   .mobile-menu-toggle {
     display: block;
