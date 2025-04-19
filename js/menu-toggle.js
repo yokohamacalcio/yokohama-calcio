@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   toggleButton.addEventListener('click', () => {
     nav.classList.toggle('active');
 
-    // Cambia icona hamburger <-> chiusura
     if (icon.classList.contains('fa-bars')) {
       icon.classList.remove('fa-bars');
       icon.classList.add('fa-times');
