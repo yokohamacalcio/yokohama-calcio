@@ -1,17 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleButton = document.querySelector('.mobile-menu-toggle');
-  const nav = document.querySelector('.main-nav');
-  const icon = toggleButton.querySelector('i');
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.main-nav');
 
-  toggleButton.addEventListener('click', () => {
-    nav.classList.toggle('active');
+    toggleButton.addEventListener('click', () => {
+        nav.classList.toggle('active');
 
-    if (icon.classList.contains('fa-bars')) {
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-times');
-    } else {
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
-    }
-  });
+        // Cambia icona hamburger ↔ X
+        const icon = toggleButton.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
 });
