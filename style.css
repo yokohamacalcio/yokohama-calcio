@@ -236,9 +236,19 @@ body {
 
 /* ========== CONTACT ========== */
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-container form {
+    width: 100%;
+    max-width: 500px; /* Limita la larghezza per non essere troppo largo */
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .social-section {
