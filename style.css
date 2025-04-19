@@ -25,10 +25,6 @@ body {
 }
 
 /* ========== HEADER ========== */
-/* Imposta il contenitore dell'header come riferimento per il posizionamento assoluto */
-.header .container {
-    position: relative;
-}
 .header {
     background: var(--bianco);
     padding: 15px 0;
