@@ -99,16 +99,27 @@ body {
     margin-bottom: 1rem;
 }
 
+.footer-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .footer-logo {
-    width: 150px; /* ingrandito */
+    max-height: 80px; /* proporzione mantenuta */
     height: auto;
-    margin-right: 1rem;
+    width: auto;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .social-links a {
     color: #fff;
-    font-size: 1.6rem;
-    margin: 0 0.5rem;
+    font-size: 1.8rem;
     transition: color 0.3s ease;
 }
 
@@ -123,7 +134,6 @@ body {
 .credits i {
     color: red;
 }
-
 
 /* ========== HERO ========== */
 .hero {
