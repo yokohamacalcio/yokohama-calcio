@@ -26,18 +26,12 @@ body {
 
 /* HEADER BASE */
 .header {
+  position: sticky;
+  top: 0;
+  width: 100%;
   background: var(--bianco);
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: var(--bianco);
-    z-index: 999;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 2000;        /* sopra tutto il resto */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header .container {
@@ -112,12 +106,24 @@ body {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  /* Container del header mantiene layout orizzontale */
-  .header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .main-nav {
+    display: none;
+    position: absolute;  /* assoluto rispetto alla header.sticky */
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bianco);
+    flex-direction: column;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1999;       /* sotto lo z-index del header */
   }
+
+  .main-nav.active {
+    display: flex;
+  }
+}
+
 
   /* Hamburger visibile a destra */
   .mobile-menu-toggle {
