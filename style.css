@@ -24,6 +24,10 @@ body {
 }
 
 /* ========== HEADER ========== */
+/* Imposta il contenitore dell'header come riferimento per il posizionamento assoluto */
+.header .container {
+    position: relative;
+}
 .header {
     background: var(--bianco);
     padding: 15px 0;
@@ -80,8 +84,9 @@ body {
 
 .header-social-icons {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
     display: flex;
     gap: 15px;
 }
