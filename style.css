@@ -111,52 +111,61 @@ body {
 }
 
 /* ========== RESPONSIVE ========== */
+/* ========== NAV ========== */
+.main-nav {
+    display: flex;
+    gap: 20px;
+}
+
 @media (max-width: 768px) {
-  .main-nav {
-    display: none;
-    flex-direction: column;
-    background: var(--bianco);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 2rem;
+        display: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
 
-  .main-nav.active {
-    display: flex;
-  }
+    .main-nav.active {
+        display: flex;
+    }
 
-  .header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
-  }
+    .nav-link {
+        color: var(--nero); /* oppure il tuo colore principale */
+        font-size: 1.1rem;
+        padding: 10px 0;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
 
-  .logo-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    order: 1;
-  }
+    .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-  .mobile-menu-toggle {
-    display: block;
-    order: 2;
-    font-size: 1.6rem;
-    background: none;
-    border: none;
-    color: var(--azzurro);
-    margin-left: auto;
-  }
+    .logo-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1;
+    }
 
-  .header-social-icons {
-    display: none;
-  }
+    .mobile-menu-toggle {
+        order: 2;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--azzurro);
+        cursor: pointer;
+        z-index: 1000;
+    }
 }
 
 /* ========== HERO ========== */
