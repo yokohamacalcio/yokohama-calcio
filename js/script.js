@@ -9,20 +9,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Crea il pulsante menu per mobile
     const menuToggle = document.createElement('button');
-    menuToggle.id = 'mobile-menu-toggle';
-    menuToggle.innerHTML = '☰ Menu';
+    menuToggle.className = 'mobile-menu-toggle';
+    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
     document.querySelector('header').prepend(menuToggle);
+
+    // Elementi UI
+    const nav = document.querySelector('nav');
+    const icon = menuToggle.querySelector('i');
 
     // Gestione click
     menuToggle.addEventListener('click', function() {
-        const nav = document.querySelector('nav');
-        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        // Animazione icona
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+        
+        // Mostra/nascondi menu
+        nav.classList.toggle('active');
     });
 
-    // Nascondi menu su resize
+    // Reset su resize
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
-            document.querySelector('nav').style.display = 'flex';
+            nav.classList.remove('active');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         }
     });
 });
