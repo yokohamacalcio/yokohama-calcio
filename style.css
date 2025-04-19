@@ -106,24 +106,12 @@ body {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  .main-nav {
-    display: none;
-    position: absolute;  /* assoluto rispetto alla header.sticky */
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--bianco);
-    flex-direction: column;
-    padding: 1rem 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1999;       /* sotto lo z-index del header */
-  }
-
-  .main-nav.active {
+  /* Container del header mantiene layout orizzontale */
+  .header .container {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-}
-
 
   /* Hamburger visibile a destra */
   .mobile-menu-toggle {
