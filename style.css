@@ -111,61 +111,58 @@ body {
 }
 
 /* ========== RESPONSIVE ========== */
-/* ========== NAV ========== */
-.main-nav {
-    display: flex;
-    gap: 20px;
-}
-
 @media (max-width: 768px) {
-    .main-nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem 2rem;
-        display: none;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        z-index: 999;
-    }
+  /* mantiene le icone social visibili */
+  .header-social-icons {
+    display: flex;
+    order: 3; /* per restare sulla destra, sotto l’hamburger */
+  }
 
-    .main-nav.active {
-        display: flex;
-    }
+  /* hamburger a destra */
+  .mobile-menu-toggle {
+    display: block;
+    order: 2;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--azzurro);
+    cursor: pointer;
+  }
 
-    .nav-link {
-        color: var(--nero); /* oppure il tuo colore principale */
-        font-size: 1.1rem;
-        padding: 10px 0;
-        width: 100%;
-        border-bottom: 1px solid #eee;
-    }
+  /* logo + titolo a sinistra */
+  .logo-title {
+    order: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+  }
 
-    .header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  /* nav nascosto di default */
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bianco);
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
 
-    .logo-title {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex: 1;
-    }
+  /* nav visibile quando .active */
+  .main-nav.active {
+    display: flex;
+  }
 
-    .mobile-menu-toggle {
-        order: 2;
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        color: var(--azzurro);
-        cursor: pointer;
-        z-index: 1000;
-    }
+  /* link del menu mobile */
+  .main-nav .nav-link {
+    padding: 0.8rem 1.5rem;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+  }
 }
 
 /* ========== HERO ========== */
