@@ -459,7 +459,7 @@ body {
 .footer-top {
     display: flex;
     align-items: center;
-    justify-content: center; /* o space-between se vuoi più separazione */
+    justify-content: space-between; /* o space-between se vuoi più separazione */
     gap: 2rem;
     margin-bottom: 1rem;
 }
@@ -468,7 +468,7 @@ body {
 .footer-logo-wrapper {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .footer-logo {
