@@ -385,14 +385,29 @@ body {
 }
 
 .footer-logo {
-    height: 60px;
-    width: auto; /* mantiene le proporzioni */
-    margin-bottom: 20px;
+    height: 100px;  /* aumentato da 80px a 100px */
+    width: auto;
 }
 
 .footer-info a {
     color: var(--bianco);
     text-decoration: none;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+    flex-wrap: wrap; /* importante per mobile */
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row; /* forza orizzontale */
 }
 
 .footer-info,
@@ -563,9 +578,10 @@ body {
 .copyright-section {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* più visibile */
     width: 100%;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .copyright {
@@ -598,6 +614,7 @@ body {
     .social-links {
         justify-content: center;
     }
+}
 
     .copyright {
         font-size: 0.8rem;
