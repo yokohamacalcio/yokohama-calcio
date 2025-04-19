@@ -78,11 +78,6 @@ body {
     border-color: var(--azzurro);
 }
 
-.footer-logo {
-    width: 120px; /* dimensione più grande, mantieni proporzioni */
-    height: auto;
-}
-
 .footer {
     padding: 2rem 0;
     background-color: #111;
@@ -96,8 +91,29 @@ body {
     align-items: center;
 }
 
-.footer-info {
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
     margin-bottom: 1rem;
+}
+
+.footer-logo {
+    width: 150px; /* ingrandito */
+    height: auto;
+    margin-right: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.6rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff4500;
 }
 
 .copyright-section {
@@ -107,6 +123,7 @@ body {
 .credits i {
     color: red;
 }
+
 
 /* ========== HERO ========== */
 .hero {
