@@ -110,10 +110,35 @@ body {
     align-items: center;
   }
 
+  /* --- Mobile Menu Toggle --- */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  z-index: 1001;
+}
+
+.mobile-menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
   .mobile-menu-toggle {
-    display: block;
-    order: 2;
+    display: flex;
   }
+}
 
   .logo-title {
     order: 1;
