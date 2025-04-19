@@ -78,6 +78,31 @@ body {
     border-color: var(--azzurro);
 }
 
+.header-social-icons {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.header-social-icons a {
+    color: #fff;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.header-social-icons a:hover {
+    color: #e74c3c;
+}
+
+/* Nascondi su mobile */
+@media (max-width: 768px) {
+    .header-social-icons {
+        display: none;
+    }
+}
+
 /* ========== HERO ========== */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
