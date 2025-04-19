@@ -121,14 +121,15 @@ body {
   }
 
   .header .container {
-    flex-wrap: wrap;
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    position: relative;
   }
 
   .logo-title {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 10px;
     order: 1;
@@ -137,19 +138,15 @@ body {
   .mobile-menu-toggle {
     display: block;
     order: 2;
+    font-size: 1.6rem;
     background: none;
     border: none;
-    font-size: 1.5rem;
     color: var(--azzurro);
+    margin-left: auto;
   }
 
   .header-social-icons {
     display: none;
-  }
-
-  .container {
-    padding: 10px 15px;
-    position: relative;
   }
 }
 
