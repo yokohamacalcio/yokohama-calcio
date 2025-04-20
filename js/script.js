@@ -6,40 +6,28 @@
 // ======================
 // 1. MENU MOBILE (Responsive)
 // ======================
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.createElement('button');
-    menuToggle.className = 'mobile-menu-toggle';
-    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-    document.querySelector('header').prepend(menuToggle);
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('.main-nav');
 
-    const nav = document.querySelector('nav');
-    const icon = menuToggle.querySelector('i');
-    const header = document.querySelector('.header');
+  menuToggle.addEventListener('click', function () {
+    nav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+  });
 
-    menuToggle.addEventListener('click', function() {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-        nav.classList.toggle('active');
-        header.classList.toggle('menu-open');
-    });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+      nav.classList.remove('active');
+      menuToggle.classList.remove('active');
+    }
+  });
 
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            nav.classList.remove('active');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-            header.classList.remove('menu-open');
-        }
-    });
-
-    document.addEventListener('click', function(e) {
-        if (!header.contains(e.target)) {
-            nav.classList.remove('active');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-            header.classList.remove('menu-open');
-        }
-    });
+  document.addEventListener('click', function (e) {
+    if (!document.querySelector('.header').contains(e.target)) {
+      nav.classList.remove('active');
+      menuToggle.classList.remove('active');
+    }
+  });
 });
 
 // ======================
