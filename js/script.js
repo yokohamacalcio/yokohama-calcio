@@ -6,26 +6,33 @@
 // ======================
 // 1. MENU MOBILE (Responsive)
 // ======================
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const nav = document.querySelector('.main-nav');
 
-  menuToggle.addEventListener('click', function () {
+  menuToggle.addEventListener('click', function() {
+    this.classList.toggle('active');
     nav.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+    
+    // Blocca lo scroll quando il menu è aperto
+    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
   });
 
-  window.addEventListener('resize', function () {
+  // Chiudi il menu quando si clicca su un link
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      nav.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Reset su resize
+  window.addEventListener('resize', function() {
     if (window.innerWidth > 768) {
-      nav.classList.remove('active');
       menuToggle.classList.remove('active');
-    }
-  });
-
-  document.addEventListener('click', function (e) {
-    if (!document.querySelector('.header').contains(e.target)) {
       nav.classList.remove('active');
-      menuToggle.classList.remove('active');
+      document.body.style.overflow = '';
     }
   });
 });
