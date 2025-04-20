@@ -25,9 +25,10 @@ body {
 }
 
 /* ========== HEADER ========== */
+/* ========== HEADER ========== */
 .header {
     background: var(--bianco);
-    padding: 15px 20px;
+    padding: 10px 15px;
     box-shadow: var(--ombra);
     position: sticky;
     top: 0;
@@ -35,34 +36,47 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    position: relative; /* IMPORTANTE per hamburger */
+    position: relative;
 }
 
 .logo-title {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .logo {
-    height: 50px;
+    height: 45px;
 }
 
 .header h1 {
     color: var(--azzurro);
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
-/* ======== NAV DESKTOP ======== */
-nav.main-nav {
+/* Pulsante menu mobile */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--azzurro);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    z-index: 110;
+}
+
+/* Nav desktop */
+.main-nav {
     display: flex;
     gap: 25px;
-    margin-left: auto;
 }
 
-nav.main-nav a {
+.main-nav a {
     color: var(--grigio);
     text-decoration: none;
     font-weight: bold;
@@ -71,67 +85,37 @@ nav.main-nav a {
     transition: all 0.3s;
 }
 
-nav.main-nav a:hover {
+.main-nav a:hover {
     color: var(--azzurro);
     border-color: var(--azzurro);
 }
 
-/* ======== MOBILE MENU BUTTON ======== */
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: var(--azzurro);
-    cursor: pointer;
-}
-
-/* ======== SOCIAL ICONS ======== */
+/* Social */
 .header-social-icons {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
     display: flex;
     gap: 15px;
 }
 
-.header-social-icons a {
-    color: #fff;
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
-}
-
-.header-social-icons a:hover {
-    color: #e74c3c;
-}
-
-/* ======== RESPONSIVE ======== */
+/* Mobile */
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: block;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1001;
     }
 
-    nav.main-nav {
+    .main-nav {
         display: none;
         flex-direction: column;
-        gap: 15px;
         background: var(--bianco);
-        padding: 15px 20px;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
+        padding: 15px;
         box-shadow: var(--ombra);
-        z-index: 1000;
+        z-index: 99;
     }
 
-    nav.main-nav.active {
+    .main-nav.active {
         display: flex;
     }
 
