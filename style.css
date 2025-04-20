@@ -25,84 +25,57 @@ body {
 }
 
 /* ========== HEADER ========== */
-.header {
-    background: var(--bianco);
-    padding: 15px 0;
-    box-shadow: var(--ombra);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+/* HEADER FIX - SOLO QUESTE REGOLE */
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
 }
 
 .logo-title {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.logo {
-    height: 50px;
-}
-
-.header h1 {
-    color: var(--azzurro);
-    margin: 0;
-    font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--azzurro);
-    cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--azzurro);
+  cursor: pointer;
+  padding: 5px;
+  z-index: 100;
 }
 
 .main-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bianco);
+  padding: 20px;
+  box-shadow: var(--ombra);
+}
+
+.main-nav.active {
+  display: block;
+}
+
+/* Solo mobile */
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+  .main-nav {
     display: flex;
-    gap: 25px;
-    margin-top: 15px;
-}
-
-.main-nav a {
-    color: var(--grigio);
-    text-decoration: none;
-    font-weight: bold;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s;
-}
-
-.main-nav a:hover {
-    color: var(--azzurro);
-    border-color: var(--azzurro);
-}
-
-.header-social-icons {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    gap: 15px;
-}
-
-.header-social-icons a {
-    color: #fff;
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
-}
-
-.header-social-icons a:hover {
-    color: #e74c3c;
-}
-
-/* Nascondi su mobile */
-@media (max-width: 768px) {
-    .header-social-icons {
-        display: none;
-    }
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
 }
 
 /* ========== HERO ========== */
