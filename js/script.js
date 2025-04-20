@@ -9,30 +9,38 @@
 document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const nav = document.querySelector('.main-nav');
+  const body = document.body;
 
   menuToggle.addEventListener('click', function() {
+    // Toggle classes
     this.classList.toggle('active');
     nav.classList.toggle('active');
     
-    // Blocca lo scroll quando il menu è aperto
-    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    // Lock body scroll when menu is open
+    body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    
+    // Update aria-expanded for accessibility
+    const isExpanded = this.classList.contains('active');
+    this.setAttribute('aria-expanded', isExpanded);
   });
 
-  // Chiudi il menu quando si clicca su un link
+  // Close menu when clicking on links
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       menuToggle.classList.remove('active');
       nav.classList.remove('active');
-      document.body.style.overflow = '';
+      body.style.overflow = '';
+      menuToggle.setAttribute('aria-expanded', 'false');
     });
   });
 
-  // Reset su resize
+  // Auto-close on resize
   window.addEventListener('resize', function() {
     if (window.innerWidth > 768) {
       menuToggle.classList.remove('active');
       nav.classList.remove('active');
-      document.body.style.overflow = '';
+      body.style.overflow = '';
+      menuToggle.setAttribute('aria-expanded', 'false');
     }
   });
 });
