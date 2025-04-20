@@ -25,84 +25,118 @@ body {
 }
 
 /* ========== HEADER ========== */
+/* ========== HEADER ========== */
 .header {
-    background: var(--bianco);
-    padding: 15px 0;
-    box-shadow: var(--ombra);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  background: var(--bianco);
+  padding: 10px 15px;
+  box-shadow: var(--ombra);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 .logo-title {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .logo {
-    height: 50px;
+  height: 50px;
 }
 
 .header h1 {
-    color: var(--azzurro);
-    margin: 0;
-    font-size: 1.5rem;
+  color: var(--azzurro);
+  margin: 0;
+  font-size: 1.5rem;
 }
 
+/* Hamburger custom */
 .mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--azzurro);
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  z-index: 110;
 }
 
+.bar {
+  height: 4px;
+  width: 100%;
+  background-color: var(--azzurro);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Transizione in X */
+.mobile-menu-toggle.active .top-bar {
+  transform: rotate(45deg) translateY(9px);
+}
+
+.mobile-menu-toggle.active .middle-bar {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active .bottom-bar {
+  transform: rotate(-45deg) translateY(-9px);
+}
+
+/* NAV desktop */
 .main-nav {
-    display: flex;
-    gap: 25px;
-    margin-top: 15px;
+  display: flex;
+  gap: 25px;
 }
 
 .main-nav a {
-    color: var(--grigio);
-    text-decoration: none;
-    font-weight: bold;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s;
+  color: var(--grigio);
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
 }
 
 .main-nav a:hover {
-    color: var(--azzurro);
-    border-color: var(--azzurro);
+  color: var(--azzurro);
+  border-color: var(--azzurro);
 }
 
-.header-social-icons {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    gap: 15px;
-}
-
-.header-social-icons a {
-    color: #fff;
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
-}
-
-.header-social-icons a:hover {
-    color: #e74c3c;
-}
-
-/* Nascondi su mobile */
+/* Responsive */
 @media (max-width: 768px) {
-    .header-social-icons {
-        display: none;
-    }
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    background: var(--bianco);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    box-shadow: var(--ombra);
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
 }
 
 /* ========== HERO ========== */
