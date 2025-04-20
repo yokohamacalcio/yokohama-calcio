@@ -7,58 +7,14 @@
 // 1. MENU MOBILE (Responsive)
 // ======================
 document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.mobile-menu-toggle');
-  const nav = document.querySelector('.main-nav');
-  const body = document.body;
-
-  menuToggle.addEventListener('click', function() {
-    // Toggle classes
-    this.classList.toggle('active');
-    nav.classList.toggle('active');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.main-nav');
     
-    // Lock body scroll when menu is open
-    body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-    
-    // Update aria-expanded for accessibility
-    const isExpanded = this.classList.contains('active');
-    this.setAttribute('aria-expanded', isExpanded);
-  });
-
-  // Close menu when clicking on links
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      menuToggle.classList.remove('active');
-      nav.classList.remove('active');
-      body.style.overflow = '';
-      menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        nav.classList.toggle('active');
     });
-  });
-
-  // Auto-close on resize
-  window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) {
-      menuToggle.classList.remove('active');
-      nav.classList.remove('active');
-      body.style.overflow = '';
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
 });
-
-// ======================
-// 2. CAROSELLO SPONSOR
-// ======================
-function initSponsorCarousel() {
-    const sponsors = document.querySelectorAll('.sponsor-card');
-    if (sponsors.length > 0) {
-        let current = 0;
-        setInterval(() => {
-            sponsors[current].classList.remove('active');
-            current = (current + 1) % sponsors.length;
-            sponsors[current].classList.add('active');
-        }, 3000); // Cambia ogni 3 secondi
-    }
-}
 
 // ======================
 // 3. HELPER CALENDARIO
