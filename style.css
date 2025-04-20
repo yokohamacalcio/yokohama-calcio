@@ -25,43 +25,98 @@ body {
 }
 
 /* ========== HEADER ========== */
-/* HEADER - SOLO QUESTE REGOLE */
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px; /* Ridotto padding */
+/* HEADER CORRETTO */
+.header {
+    background: var(--bianco);
+    padding: 15px 0;
+    box-shadow: var(--ombra);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* LOGO (dimensioni originali) */
 .logo-title {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Ridotto spazio */
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .logo {
-  height: 50px; /* Dimensione ridotta */
-  width: auto; /* Mantiene proporzioni */
+    height: 50px; /* Dimensione originale */
+    width: auto;
 }
 
 .header h1 {
-  font-size: 1.2rem; /* Titolo più piccolo */
+    color: var(--azzurro); /* Titolo azzurro */
+    margin: 0;
+    font-size: 1.5rem; /* Dimensione originale */
 }
 
+/* MENU HAMBURGER */
 .mobile-menu-toggle {
-  font-size: 1.5rem; /* Icona più piccola */
-  padding: 0;
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--azzurro);
+    cursor: pointer;
+    padding: 5px;
+    z-index: 101;
 }
 
-/* Mobile */
+/* MENU NAVIGAZIONE */
+.main-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: var(--grigio);
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--azzurro);
+    border-color: var(--azzurro);
+}
+
+/* VERSIONE MOBILE */
 @media (max-width: 768px) {
-  .logo {
-    height: 45px; /* Ancora più piccolo su mobile */
-  }
-  
-  .header h1 {
-    font-size: 1rem;
-  }
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--bianco);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        display: none;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
 }
 
 /* ========== HERO ========== */
