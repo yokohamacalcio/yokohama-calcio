@@ -25,7 +25,6 @@ body {
 }
 
 /* ========== HEADER ========== */
-/* ========== HEADER ========== */
 .header {
     background: var(--bianco);
     padding: 10px 15px;
@@ -34,28 +33,28 @@ body {
     top: 0;
     z-index: 100;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     position: relative;
 }
 
 .logo-title {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .logo {
-    height: 45px;
+    height: 50px;
 }
 
 .header h1 {
     color: var(--azzurro);
     margin: 0;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
-/* Pulsante menu mobile */
+/* Pulsante hamburger */
 .mobile-menu-toggle {
     display: none;
     background: none;
@@ -70,12 +69,13 @@ body {
     z-index: 110;
 }
 
-/* Nav desktop */
+/* NAV principale (desktop) */
 .main-nav {
     display: flex;
     gap: 25px;
 }
 
+/* NAV links */
 .main-nav a {
     color: var(--grigio);
     text-decoration: none;
@@ -90,10 +90,21 @@ body {
     border-color: var(--azzurro);
 }
 
-/* Social */
+/* Social icons */
 .header-social-icons {
     display: flex;
     gap: 15px;
+}
+
+/* Stile icone social */
+.header-social-icons a {
+    color: #fff;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.header-social-icons a:hover {
+    color: #e74c3c;
 }
 
 /* Mobile */
@@ -112,7 +123,6 @@ body {
         width: 100%;
         padding: 15px;
         box-shadow: var(--ombra);
-        z-index: 99;
     }
 
     .main-nav.active {
