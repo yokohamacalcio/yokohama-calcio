@@ -40,7 +40,7 @@ body {
 }
 
 .logo {
-  height: 40px; /* Dimensione ridotta */
+  height: 50px; /* Dimensione ridotta */
   width: auto; /* Mantiene proporzioni */
 }
 
@@ -56,7 +56,7 @@ body {
 /* Mobile */
 @media (max-width: 768px) {
   .logo {
-    height: 35px; /* Ancora più piccolo su mobile */
+    height: 45px; /* Ancora più piccolo su mobile */
   }
   
   .header h1 {
