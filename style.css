@@ -25,7 +25,6 @@ body {
 }
 
 /* ========== HEADER ========== */
-/* ======== HEADER BASE ======== */
 .header {
     background: var(--bianco);
     padding: 15px 20px;
@@ -37,6 +36,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    position: relative; /* IMPORTANTE per hamburger */
 }
 
 .logo-title {
@@ -139,6 +139,7 @@ nav.main-nav a:hover {
         display: none;
     }
 }
+
 /* ========== HERO ========== */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
