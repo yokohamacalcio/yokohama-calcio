@@ -56,34 +56,41 @@ body {
 }
 
 /* ICONE SOCIAL */
-.header-social {
-  display: flex;
-  gap: 20px;
-}
-
-.header-social a {
-  color: #333;
-  font-size: 1.3rem;
-  transition: color 0.2s;
-}
-
-.header-social a:hover {
-  color: #0066cc;
-}
-
-/* MOBILE ADAPTATION */
-@media (max-width: 768px) {
-  .header-social {
+.header-social-icons {
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Aggiunto margine destro */
+    transform: translateY(-50%);
+    display: flex;
     gap: 15px;
-  }
-  
-  .header-social a {
-    font-size: 1.2rem;
-  }
-  
-  .logo {
-    height: 40px;
-  }
+}
+
+.header-social-icons a {
+    color: var(--azzurro); /* Usa il tuo colore azzurro */
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.header-social-icons a:hover {
+    color: var(--grigio); /* Scuro al hover */
+    transform: translateY(-2px); /* Leggero effetto al hover */
+}
+
+/* Mobile - modificato per mostrare sempre le icone */
+@media (max-width: 768px) {
+    .header-social-icons {
+        display: flex; /* Mostra invece di nascondere */
+        position: static;
+        transform: none;
+        margin-left: auto; /* Allinea a destra */
+        padding-right: 15px;
+    }
+    
+    /* Nascondi elementi non più necessari */
+    .mobile-menu-toggle,
+    .main-nav {
+        display: none;
+    }
 }
 
 /* ========== HERO ========== */
