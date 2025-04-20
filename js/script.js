@@ -20,8 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.classList.toggle('fa-bars');
         icon.classList.toggle('fa-times');
         nav.classList.toggle('active');
-        
-        // Aggiunge classe allo header per tracking
         header.classList.toggle('menu-open');
     });
 
@@ -34,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Chiude il menu cliccando fuori
     document.addEventListener('click', function(e) {
         if (!header.contains(e.target)) {
             nav.classList.remove('active');
@@ -43,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('menu-open');
         }
     });
-});;
+});
 
 // ======================
 // 2. CAROSELLO SPONSOR
