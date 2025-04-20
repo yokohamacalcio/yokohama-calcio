@@ -25,56 +25,42 @@ body {
 }
 
 /* ========== HEADER ========== */
-/* HEADER FIX - SOLO QUESTE REGOLE */
+/* HEADER - SOLO QUESTE REGOLE */
 .header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 10px 20px; /* Ridotto padding */
 }
 
 .logo-title {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px; /* Ridotto spazio */
+}
+
+.logo {
+  height: 40px; /* Dimensione ridotta */
+  width: auto; /* Mantiene proporzioni */
+}
+
+.header h1 {
+  font-size: 1.2rem; /* Titolo più piccolo */
 }
 
 .mobile-menu-toggle {
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: var(--azzurro);
-  cursor: pointer;
-  padding: 5px;
-  z-index: 100;
+  font-size: 1.5rem; /* Icona più piccola */
+  padding: 0;
 }
 
-.main-nav {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--bianco);
-  padding: 20px;
-  box-shadow: var(--ombra);
-}
-
-.main-nav.active {
-  display: block;
-}
-
-/* Solo mobile */
-@media (min-width: 769px) {
-  .mobile-menu-toggle {
-    display: none;
+/* Mobile */
+@media (max-width: 768px) {
+  .logo {
+    height: 35px; /* Ancora più piccolo su mobile */
   }
-  .main-nav {
-    display: flex;
-    position: static;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
+  
+  .header h1 {
+    font-size: 1rem;
   }
 }
 
