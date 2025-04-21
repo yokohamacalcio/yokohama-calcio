@@ -126,6 +126,17 @@ body {
     z-index: 1001;
 }
 
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 992px) {
+    .main-nav {
+        gap: 20px;
+    }
+    
+    .header-social-icons {
+        gap: 15px;
+    }
+}
+
 /* ========== MOBILE VERSION ========== */
 @media (max-width: 768px) {
     /* Regolazioni header */
@@ -210,20 +221,20 @@ body {
 
 /* ========== HERO ========== */
 .hero {
+    width: 100%;
+    height: 400px; /* Altezza aumentata */
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                 url('./immagini/hero-bg.jpg') center/cover;
-    height: 300px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Aggiunto per centrare orizzontalmente */
-    text-align: center;
+    justify-content: center;
     color: var(--bianco);
 }
 
 .hero .container {
     width: 100%;
     max-width: 1200px;
-    padding: 0 20px;
+    padding: 0 5%; /* Stesso padding dell'header */
 }
 
 .hero-content {
