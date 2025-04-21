@@ -6,30 +6,43 @@
 // ======================
 // 1. MENU MOBILE (Responsive)
 // ======================
+// Aggiungi questo script prima della chiusura </body>
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.main-nav');
-    
+    const body = document.body;
+
     menuToggle.addEventListener('click', function() {
+        // Toggle classes
         this.classList.toggle('active');
         nav.classList.toggle('active');
         
-        // Cambia icona
-        const icon = this.querySelector('i');
-        if(this.classList.contains('active')) {
-            icon.classList.replace('fa-bars', 'fa-times');
-        } else {
-            icon.classList.replace('fa-times', 'fa-bars');
-        }
+        // Blocca scroll quando menu è aperto
+        body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        
+        // Aggiorna aria-label per accessibilità
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
     });
-    
+
     // Chiudi menu al click sui link
     document.querySelectorAll('.main-nav a').forEach(link => {
         link.addEventListener('click', () => {
             menuToggle.classList.remove('active');
             nav.classList.remove('active');
-            menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            body.style.overflow = '';
+            menuToggle.setAttribute('aria-expanded', 'false');
         });
+    });
+
+    // Chiudi menu al resize
+    window.addEventListener('resize', function() {
+        if(window.innerWidth > 768) {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            body.style.overflow = '';
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
     });
 });
 
