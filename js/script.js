@@ -6,50 +6,38 @@
 // ======================
 // 1. MENU MOBILE (Hamburger)
 // ======================
-document.addEventListener('DOMContentLoaded', function() {
+function setupMobileMenu() {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.main-nav');
     
     if(menuToggle && nav) {
-        // Toggle del menu
         menuToggle.addEventListener('click', function(e) {
             e.preventDefault();
-            toggleMenu();
-        });
-        
-        // Chiusura al click sui link
-        document.querySelectorAll('.main-nav a').forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-        
-        // Chiusura al resize (se supera la breakpoint mobile)
-        window.addEventListener('resize', function() {
-            if(window.innerWidth > 768 && nav.classList.contains('active')) {
-                closeMenu();
+            
+            // Cambia icona hamburger/X
+            const icon = this.querySelector('i');
+            if(icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
             }
+            
+            // Mostra/nascondi menu con animazione
+            nav.classList.toggle('active');
+            
+            // Blocca scroll quando menu è aperto
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Chiudi menu al click sui link
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
     }
-    
-    function toggleMenu() {
-        // Icona
-        const icons = menuToggle.querySelectorAll('i');
-        icons.forEach(icon => icon.classList.toggle('hidden'));
-        
-        // Menu
-        nav.classList.toggle('active');
-        
-        // Scroll
-        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-    }
-    
-    function closeMenu() {
-        const icons = menuToggle.querySelectorAll('i');
-        icons[0].classList.remove('hidden'); // Icona hamburger
-        icons[1].classList.add('hidden');    // Icona X
-        nav.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-});
+}
 
 // ======================
 // 2. BACK TO TOP BUTTON
