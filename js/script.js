@@ -6,38 +6,46 @@
 // ======================
 // 1. MENU MOBILE (Hamburger)
 // ======================
-function setupMobileMenu() {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('.main-nav');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.main-nav');
     
-    if(menuToggle && nav) {
-        menuToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Cambia icona hamburger/X
-            const icon = this.querySelector('i');
-            if(icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            }
-            
-            // Mostra/nascondi menu con animazione
-            nav.classList.toggle('active');
-            
-            // Blocca scroll quando menu è aperto
-            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-        });
+    if (!menuButton || !mobileMenu) return;
+
+    // Icone (verifica che esistano nel tuo HTML)
+    const iconHamburger = menuButton.querySelector('.fa-bars');
+    const iconClose = menuButton.querySelector('.fa-times');
+
+    menuButton.addEventListener('click', function() {
+        // Toggle del menu
+        mobileMenu.classList.toggle('active');
         
-        // Chiudi menu al click sui link
-        document.querySelectorAll('.main-nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
-                nav.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+        // Toggle icone (se presenti)
+        if (iconHamburger && iconClose) {
+            iconHamburger.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        }
+        
+        // Blocco scroll
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        
+        // Debug (puoi rimuoverlo dopo)
+        console.log('Menu stato:', mobileMenu.classList.contains('active') ? 'APERTO' : 'CHIUSO');
+    });
+
+    // Chiudi menu al click sui link
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            if (iconHamburger && iconClose) {
+                iconHamburger.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
         });
-    }
-}
+    });
+});
 
 // ======================
 // 2. BACK TO TOP BUTTON
