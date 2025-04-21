@@ -14,6 +14,20 @@ document.querySelector('.mobile-menu-toggle').addEventListener('click', function
         : '<i class="fas fa-bars"></i>';
 });
 
+// Chiude il menu quando si clicca un link (solo mobile)
+document.querySelectorAll('.main-nav a').forEach(link => {
+    link.addEventListener('click', function() {
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('.main-nav');
+
+        if (menuToggle.classList.contains('active')) {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
+});
+
 // ======================
 // 3. HELPER CALENDARIO
 // ======================
