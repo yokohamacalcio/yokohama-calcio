@@ -492,7 +492,7 @@ body {
 .footer {
     background: var(--azzurro-scuro);
     color: var(--bianco);
-    padding: 30px 20px;
+    padding: 30px 0;
     text-align: center;
 }
 
@@ -505,70 +505,92 @@ body {
     align-items: center;
 }
 
-.footer-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
+.footer-logo {
+    height: 100px;
+    width: auto;
+    margin-bottom: 20px;
 }
 
-.footer-logo {
-    height: 80px;
-    width: auto;
+.footer-info {
+    margin-bottom: 20px;
 }
 
 .footer-info a {
     color: var(--bianco);
     text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer-info a:hover {
+    opacity: 0.8;
 }
 
 .footer-social {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
 }
 
-.footer-social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.footer-social-links a {
+.footer-social a {
     color: var(--bianco);
     font-size: 1.8rem;
-    transition: color 0.3s;
+    transition: all 0.3s;
 }
 
-.footer-social-links a:hover,
-.footer-social-links a:focus {
+.footer-social a:hover {
+    transform: translateY(-3px);
     color: #ff4500;
 }
 
 .copyright-section {
-    margin-top: 20px;
+    margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     width: 100%;
 }
 
 .copyright {
     color: var(--bianco);
     font-size: 0.9rem;
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
 
 .credits {
-    display: block;
-    margin-top: 5px;
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.7);
+    display: block;
 }
 
 .credits i.fa-heart {
     color: #e74c3c;
-    margin: 0 3px;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 20px;
+    }
+    
+    .footer-logo {
+        height: 80px;
+    }
+    
+    .footer-social {
+        gap: 20px;
+    }
+    
+    .footer-social a {
+        font-size: 1.5rem;
+    }
+    
+    .copyright {
+        font-size: 0.8rem;
+    }
+    
+    .credits {
+        font-size: 0.7rem;
+    }
 }
 
 /* ========== MEDIA QUERIES ========== */
