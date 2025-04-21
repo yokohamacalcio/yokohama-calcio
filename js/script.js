@@ -1,86 +1,81 @@
 /**
  * yokohamacalcio - Funzioni essenziali
- * Versione semplificata per GitHub Pages
+ * Versione ottimizzata per GitHub Pages
  */
 
 // ======================
 // 1. MENU MOBILE (Hamburger)
 // ======================
-document.addEventListener('DOMContentLoaded', function() {
+function setupMobileMenu() {
     const menuButton = document.querySelector('.mobile-menu-toggle');
     const mobileMenu = document.querySelector('.main-nav');
     
-    if (!menuButton || !mobileMenu) return;
+    if (!menuButton || !mobileMenu) {
+        console.warn('Elementi del menu mobile non trovati');
+        return;
+    }
 
-    // Icone (verifica che esistano nel tuo HTML)
     const iconHamburger = menuButton.querySelector('.fa-bars');
     const iconClose = menuButton.querySelector('.fa-times');
 
-    menuButton.addEventListener('click', function() {
-        // Toggle del menu
-        mobileMenu.classList.toggle('active');
+    function toggleMenu() {
+        const isActive = mobileMenu.classList.toggle('active');
         
-        // Toggle icone (se presenti)
-        if (iconHamburger && iconClose) {
-            iconHamburger.classList.toggle('hidden');
-            iconClose.classList.toggle('hidden');
-        }
+        // Gestione icone
+        if (iconHamburger) iconHamburger.classList.toggle('hidden', isActive);
+        if (iconClose) iconClose.classList.toggle('hidden', !isActive);
         
         // Blocco scroll
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        
-        // Debug (puoi rimuoverlo dopo)
-        console.log('Menu stato:', mobileMenu.classList.contains('active') ? 'APERTO' : 'CHIUSO');
-    });
+        document.body.style.overflow = isActive ? 'hidden' : '';
+    }
+
+    menuButton.addEventListener('click', toggleMenu);
 
     // Chiudi menu al click sui link
     document.querySelectorAll('.main-nav a').forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
-            
-            if (iconHamburger && iconClose) {
-                iconHamburger.classList.remove('hidden');
-                iconClose.classList.add('hidden');
-            }
+            if (iconHamburger) iconHamburger.classList.remove('hidden');
+            if (iconClose) iconClose.classList.add('hidden');
         });
     });
-});
+}
 
 // ======================
 // 2. BACK TO TOP BUTTON
 // ======================
-document.addEventListener('DOMContentLoaded', function() {
+function setupBackToTop() {
     const backToTopBtn = document.querySelector('.back-to-top');
     
-    if (!backToTopBtn) return;
+    if (!backToTopBtn) {
+        console.warn('Pulsante "Torna su" non trovato');
+        return;
+    }
 
-    // Mostra/nascondi al scroll
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    });
+    function handleScroll() {
+        backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+    }
 
-    // Click handler
-    backToTopBtn.addEventListener('click', function(e) {
+    function scrollToTop(e) {
         e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-});
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    backToTopBtn.addEventListener('click', scrollToTop);
+    
+    // Inizializza lo stato
+    handleScroll();
+}
 
 // ======================
 // INIZIALIZZAZIONE
 // ======================
 document.addEventListener('DOMContentLoaded', function() {
-    setupMobileMenu();
-    setupBackToTop();
-    
     // DEBUG: Verifica caricamento
     console.log('Script inizializzato correttamente');
+    
+    setupMobileMenu();
+    setupBackToTop();
 });
