@@ -116,17 +116,17 @@ body {
 
 /* ========== HAMBURGER ========== */
 .mobile-menu-toggle {
-    display: none; /* Nascosto di default (visibile solo su mobile) */
-    align-items: center;
-    justify-content: center;
+    display: none;
     background: none;
     border: none;
-    font-size: 1.8rem;
-    padding: 5px;
     color: var(--azzurro);
+    font-size: 1.8rem;
+    padding: 8px;
     cursor: pointer;
     z-index: 1001;
+    margin-left: auto; /* Allinea a destra */
 }
+
 
 /* ========== MEDIA QUERIES ========== */
 @media (max-width: 992px) {
@@ -141,9 +141,14 @@ body {
 
 /* ========== MOBILE VERSION ========== */
 @media (max-width: 768px) {
-    /* Regolazioni header */
-    .logo {
-        height: 40px;
+    /* Nascondi elementi desktop */
+    .desktop-nav-wrapper {
+        display: none;
+    }
+    
+    /* Mostra hamburger */
+    .mobile-menu-toggle {
+        display: block;
     }
 
     .header h1 {
@@ -155,28 +160,26 @@ body {
         display: none;
     }
 
-    /* Mostra hamburger */
-    .mobile-menu-toggle {
-        display: flex;
-    }
-
-    /* Stile menu mobile - APPROCCIO AFFIDABILE */
+    /* Stile menu mobile */
     .main-nav {
-        display: none;
         position: fixed;
-        top: 80px; /* Altezza header */
+        top: 80px;
         left: 0;
         right: 0;
         background: var(--bianco);
-        padding: 20px 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 30px 5%;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         z-index: 999;
+        display: none;
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
     }
 
     .main-nav.active {
         display: flex;
+        animation: fadeInDown 0.4s ease-out;
     }
 
     /* Animazione icona affidabile */
@@ -196,18 +199,19 @@ body {
         display: block;
     }
 
-    /* Stile link menu mobile */
+    /* Stile link mobile */
     .main-nav a {
-        padding: 12px 20px;
+        padding: 15px;
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: var(--grigio);
-        font-weight: bold;
+        border-radius: 8px;
+        transition: all 0.3s;
     }
 
     .main-nav a:hover {
+        background: rgba(0,120,215,0.1);
         color: var(--azzurro);
-        background-color: rgba(0,120,215,0.1);
     }
 
     /* Nascondi icone social su mobile */
@@ -218,6 +222,18 @@ body {
     /* Blocca scroll quando menu è aperto */
     body.menu-open {
         overflow: hidden;
+    }
+    
+    /* Animazione */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
 
