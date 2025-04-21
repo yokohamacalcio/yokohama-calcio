@@ -6,14 +6,12 @@
 // ======================
 // 1. MENU MOBILE (Responsive)
 // ======================
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('.main-nav');
-    
-    menuToggle.addEventListener('click', function() {
-        this.classList.toggle('active');
-        nav.classList.toggle('active');
-    });
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.main-nav').classList.toggle('active');
+    this.innerHTML = this.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
 });
 
 // ======================
