@@ -6,7 +6,32 @@
 // ======================
 // 1. MENU MOBILE (Responsive)
 // ======================
-
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        nav.classList.toggle('active');
+        
+        // Cambia icona
+        const icon = this.querySelector('i');
+        if(this.classList.contains('active')) {
+            icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+            icon.classList.replace('fa-times', 'fa-bars');
+        }
+    });
+    
+    // Chiudi menu al click sui link
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        });
+    });
+});
 
 // ======================
 // 3. HELPER CALENDARIO
