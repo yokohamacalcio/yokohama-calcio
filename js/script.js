@@ -14,17 +14,12 @@ document.querySelector('.mobile-menu-toggle').addEventListener('click', function
         : '<i class="fas fa-bars"></i>';
 });
 
-// Chiude il menu quando si clicca un link (solo mobile)
+// Chiude il menu mobile al clic su un link
 document.querySelectorAll('.main-nav a').forEach(link => {
-    link.addEventListener('click', function() {
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
-        const nav = document.querySelector('.main-nav');
-
-        if (menuToggle.classList.contains('active')) {
-            menuToggle.classList.remove('active');
-            nav.classList.remove('active');
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
+    link.addEventListener('click', () => {
+        document.querySelector('.main-nav').classList.remove('active');
+        document.querySelector('.mobile-menu-toggle').classList.remove('active');
+        document.querySelector('.mobile-menu-toggle').innerHTML = '<i class="fas fa-bars"></i>';
     });
 });
 
