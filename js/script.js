@@ -6,22 +6,7 @@
 // ======================
 // 1. MENU MOBILE (Responsive)
 // ======================
-document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-    this.classList.toggle('active');
-    document.querySelector('.main-nav').classList.toggle('active');
-    this.innerHTML = this.classList.contains('active') 
-        ? '<i class="fas fa-times"></i>' 
-        : '<i class="fas fa-bars"></i>';
-});
 
-// Chiude il menu mobile al clic su un link
-document.querySelectorAll('.main-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.querySelector('.main-nav').classList.remove('active');
-        document.querySelector('.mobile-menu-toggle').classList.remove('active');
-        document.querySelector('.mobile-menu-toggle').innerHTML = '<i class="fas fa-bars"></i>';
-    });
-});
 
 // ======================
 // 3. HELPER CALENDARIO
