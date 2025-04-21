@@ -70,7 +70,23 @@ body {
 .main-nav {
     display: flex;
     gap: 25px;
+    margin-top: 15px;
 }
+
+.main-nav a {
+    color: var(--grigio);
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--azzurro);
+    border-color: var(--azzurro);
+}
+
 
 .header-social-icons {
     display: flex;
