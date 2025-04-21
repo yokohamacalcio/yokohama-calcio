@@ -7,39 +7,39 @@
 // 1. MENU MOBILE (Responsive)
 // ======================
 document.addEventListener('DOMContentLoaded', function() {
+    // Menu Mobile
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.main-nav');
     
-    // Funzione toggle
-    function toggleMenu() {
-        menuToggle.classList.toggle('active');
-        nav.classList.toggle('active');
-        
-        // Cambio icona
-        const icon = menuToggle.querySelector('i');
-        if(menuToggle.classList.contains('active')) {
-            icon.classList.replace('fa-bars', 'fa-times');
-        } else {
-            icon.classList.replace('fa-times', 'fa-bars');
-        }
+    if(menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+            nav.classList.toggle('active');
+        });
     }
-    
-    // Event listeners
-    menuToggle.addEventListener('click', toggleMenu);
-    
-    // Chiudi menu al click sui link
-    document.querySelectorAll('.main-nav a').forEach(link => {
-        link.addEventListener('click', toggleMenu);
-    });
-    
-    // Chiudi menu al resize
-    window.addEventListener('resize', function() {
-        if(window.innerWidth > 768) {
-            menuToggle.classList.remove('active');
-            nav.classList.remove('active');
-            const icon = menuToggle.querySelector('i');
-            icon.classList.replace('fa-times', 'fa-bars');
+
+    // Back to Top Button
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    backToTopBtn.setAttribute('aria-label', 'Torna su');
+    document.body.appendChild(backToTopBtn);
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
         }
+    });
+
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 });
 
