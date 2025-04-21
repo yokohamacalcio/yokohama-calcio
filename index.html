@@ -379,38 +379,6 @@
                 indicator.classList.toggle('active', index === counter);
             });
         }
-    </script>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('.main-nav');
-    const body = document.body;
-
-    // Funzione toggle menu
-    const toggleMenu = () => {
-        menuToggle.classList.toggle('active');
-        nav.classList.toggle('active');
-        body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-    };
-
-    // Apertura/chiusura menu
-    menuToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        toggleMenu();
-    });
-
-    // Chiudi menu cliccando fuori
-    document.addEventListener('click', function(e) {
-        if(nav.classList.contains('active') && !e.target.closest('.main-nav, .mobile-menu-toggle')) {
-            toggleMenu();
-        }
-    });
-
-    // Chiudi menu al click sui link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', toggleMenu);
-    });
-});
-</script>   
+    </script>   
 </bodyd>
 </html>
