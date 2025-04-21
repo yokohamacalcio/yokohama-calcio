@@ -9,45 +9,36 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.main-nav');
-    const body = document.body;
-
-    // Funzione toggle menu
-    const toggleMenu = () => {
+    
+    // Funzione toggle
+    function toggleMenu() {
         menuToggle.classList.toggle('active');
         nav.classList.toggle('active');
-        body.classList.toggle('menu-open');
         
-        // Cambia icona
+        // Cambio icona
         const icon = menuToggle.querySelector('i');
         if(menuToggle.classList.contains('active')) {
             icon.classList.replace('fa-bars', 'fa-times');
         } else {
             icon.classList.replace('fa-times', 'fa-bars');
         }
-    };
-
-    // Apertura/chiusura menu
-    menuToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        toggleMenu();
-    });
-
-    // Chiudi menu cliccando fuori
-    document.addEventListener('click', function(e) {
-        if(nav.classList.contains('active') && !e.target.closest('.main-nav, .mobile-menu-toggle')) {
-            toggleMenu();
-        }
-    });
-
+    }
+    
+    // Event listeners
+    menuToggle.addEventListener('click', toggleMenu);
+    
     // Chiudi menu al click sui link
     document.querySelectorAll('.main-nav a').forEach(link => {
         link.addEventListener('click', toggleMenu);
     });
-
+    
     // Chiudi menu al resize
     window.addEventListener('resize', function() {
-        if(window.innerWidth > 768 && nav.classList.contains('active')) {
-            toggleMenu();
+        if(window.innerWidth > 768) {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.replace('fa-times', 'fa-bars');
         }
     });
 });
