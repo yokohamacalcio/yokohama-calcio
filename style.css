@@ -108,10 +108,12 @@ body {
 /* ========== HAMBURGER ========== */
 .mobile-menu-toggle {
     display: none;
+    align-items: center;
+    font-size: 1.8rem;
+    padding: 5px;
+    color: var(--azzurro);
     background: none;
     border: none;
-    font-size: 1.8rem;
-    color: var(--azzurro);
     cursor: pointer;
 }
 
@@ -130,25 +132,28 @@ body {
     }
 
     .mobile-menu-toggle {
-        display: block;
+        display: flex;
     }
 
     .main-nav {
-        position: absolute;
-        top: 100%; /* sotto l’header */
+        position: fixed;
+        top: 80px; /* Altezza header */
         left: 0;
-        width: 100%;
-        background-color: var(--bianco);
+        right: 0;
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        background: var(--bianco);
+        padding: 20px 0;
+        z-index: 998;
         flex-direction: column;
         align-items: center;
-        padding: 20px 0;
-        gap: 15px;
-        box-shadow: var(--ombra);
-        display: none;
+        gap: 20px;
     }
 
     .main-nav.active {
-        display: flex;
+        transform: translateX(0);
     }
 
     .header-social-icons {
