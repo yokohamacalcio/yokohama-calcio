@@ -7,20 +7,36 @@
 // 1. MENU MOBILE (Responsive)
 // ======================
 document.addEventListener('DOMContentLoaded', function() {
-    // Menu Mobile
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.main-nav');
+    const body = document.body;
     
-    if(menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            const icon = this.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-            nav.classList.toggle('active');
+    // Toggle menu
+    menuToggle.addEventListener('click', function() {
+        // Cambia icona
+        const icon = this.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+        
+        // Mostra/nascondi menu
+        nav.classList.toggle('active');
+        
+        // Blocca scroll
+        body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Chiudi menu al click sui link
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            nav.classList.remove('active');
+            body.style.overflow = '';
         });
-    }
+    });
+});
 
-    // Back to Top Button
+// Back to Top Button
+function setupBackToTop() {
     const backToTopBtn = document.createElement('button');
     backToTopBtn.className = 'back-to-top';
     backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
@@ -41,6 +57,12 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
+}
+
+// Inizializzazione quando il DOM è pronto
+document.addEventListener('DOMContentLoaded', function() {
+    setupMobileMenu();
+    setupBackToTop();
 });
 
 // ======================
