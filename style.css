@@ -25,7 +25,7 @@ body {
 }
 
 /* ========== HEADER ========== */
-/* HEADER CORRETTO */
+/* HEADER - STILE FINALE */
 .header {
     background: var(--bianco);
     padding: 15px 0;
@@ -42,9 +42,11 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box; /* Aggiunto per correggere dimensioni */
 }
 
-/* LOGO (dimensioni originali) */
+/* LOGO E TITOLO */
 .logo-title {
     display: flex;
     align-items: center;
@@ -52,14 +54,14 @@ body {
 }
 
 .logo {
-    height: 50px; /* Dimensione originale */
+    height: 50px;
     width: auto;
 }
 
 .header h1 {
-    color: var(--azzurro); /* Titolo azzurro */
+    color: var(--azzurro);
     margin: 0;
-    font-size: 1.5rem; /* Dimensione originale */
+    font-size: 1.5rem;
 }
 
 /* MENU HAMBURGER */
@@ -71,30 +73,22 @@ body {
     color: var(--azzurro);
     cursor: pointer;
     padding: 5px;
-    z-index: 101;
 }
 
-/* MENU NAVIGAZIONE */
-.main-nav {
-    display: flex;
-    gap: 25px;
+/* CONTENUTO PRINCIPALE - RIPRISTINO LAYOUT */
+.main-content {
+    width: 100%;
+    overflow-x: hidden; /* Previene spostamenti orizzontali */
 }
 
-.main-nav a {
-    color: var(--grigio);
-    text-decoration: none;
-    font-weight: bold;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s;
+/* SEZIONI - RIPRISTINO STILE ORIGINALE */
+.section {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 20px; /* Regola secondo necessità */
 }
 
-.main-nav a:hover {
-    color: var(--azzurro);
-    border-color: var(--azzurro);
-}
-
-/* VERSIONE MOBILE */
+/* MOBILE */
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: block;
@@ -116,6 +110,16 @@ body {
 
     .main-nav.active {
         display: flex;
+    }
+
+    /* GARANTISCI CHE IL CONTENUTO NON SI SPOSTI */
+    .hero, .section, .carousel-section, .footer {
+        width: 100vw;
+        max-width: 100%;
+        margin-left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
     }
 }
 
