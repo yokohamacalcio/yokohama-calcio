@@ -151,8 +151,17 @@ body {
         display: block;
     }
 
+    .logo {
+        height: 60px; /* Dimensione ridotta per mobile */
+        width: auto;
+    }
+    
     .header h1 {
-        font-size: 1.3rem;
+        font-size: 1.2rem; /* Testo più piccolo */
+    }
+    
+    .header .container {
+        padding: 10px 5%; /* Padding ridotto */
     }
 
     /* Nascondi elementi desktop */
@@ -308,6 +317,42 @@ body {
     .hero-subtitle {
         font-size: 1rem;
     }
+}
+
+/* ========== BACK TO TOP BUTTON ========== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--azzurro);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--azzurro-scuro);
+    transform: translateY(-3px);
+}
+
+.back-to-top i {
+    font-size: 1.5rem;
 }
 
 /* ========== SECTIONS ========== */
