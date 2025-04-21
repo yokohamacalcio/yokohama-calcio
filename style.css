@@ -121,6 +121,7 @@ body {
     cursor: pointer;
     z-index: 1001;
     transition: all 0.3s ease;
+    display: block;
 }
 
 .mobile-menu-toggle i {
@@ -133,6 +134,7 @@ body {
 
 /* ========== MOBILE VERSION ========== */
 @media (max-width: 768px) {
+    
     /* Regolazioni header */
     .logo {
         height: 40px;
@@ -148,25 +150,22 @@ body {
 
     /* Stile menu mobile */
     .main-nav {
+        display: none;
         position: fixed;
-        top: 80px;
+        top: 80px; /* Altezza header */
         left: 0;
         right: 0;
         background: var(--bianco);
+        padding: 20px;
+        box-shadow: var(--ombra);
+        z-index: 1000;
         flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
         gap: 15px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        transform: translateY(-150%);
-        transition: transform 0.4s ease-out;
-        z-index: 999;
-        display: none; /* Inizialmente nascosto */
     }
 
     .main-nav.active {
+        opacity: 1;
         transform: translateY(0);
-        display: flex; /* Mostra quando attivo */
     }
 
     /* Icona hamburger animata */
