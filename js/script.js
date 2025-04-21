@@ -50,24 +50,29 @@ document.addEventListener('DOMContentLoaded', function() {
 // ======================
 // 2. BACK TO TOP BUTTON
 // ======================
-function setupBackToTop() {
-    const backToTopBtn = document.createElement('button');
-    backToTopBtn.className = 'back-to-top';
-    backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    backToTopBtn.setAttribute('aria-label', 'Torna su');
-    document.body.appendChild(backToTopBtn);
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopBtn = document.querySelector('.back-to-top');
+    
+    if (!backToTopBtn) return;
 
+    // Mostra/nascondi al scroll
     window.addEventListener('scroll', function() {
-        backToTopBtn.classList.toggle('visible', window.pageYOffset > 300);
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
     });
 
-    backToTopBtn.addEventListener('click', function() {
+    // Click handler
+    backToTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
-}
+});
 
 // ======================
 // INIZIALIZZAZIONE
