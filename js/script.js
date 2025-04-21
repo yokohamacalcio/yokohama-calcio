@@ -9,30 +9,32 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.main-nav');
-    const body = document.body;
     
-    // Toggle menu
-    menuToggle.addEventListener('click', function() {
-        // Cambia icona
-        const icon = this.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-        
-        // Mostra/nascondi menu
-        nav.classList.toggle('active');
-        
-        // Blocca scroll
-        body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-    });
+    // Debug iniziale
+    console.log('Script loaded - Menu elements:', {menuToggle, nav});
     
-    // Chiudi menu al click sui link
-    document.querySelectorAll('.main-nav a').forEach(link => {
-        link.addEventListener('click', function() {
-            menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+    if(menuToggle && nav) {
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Hamburger clicked - current state:', nav.classList.contains('active'));
+            
+            // Cambia solo l'icona senza mostrare il menu
+            const icon = this.querySelector('i');
+            if(icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+            
+            // DEBUG: Forza la chiusura se per qualche motivo fosse aperto
             nav.classList.remove('active');
-            body.style.overflow = '';
         });
-    });
+        
+        // DEBUG: Controlla se altri script stanno interferendo
+        console.log('Event listeners on menuToggle:', 
+            getEventListeners(menuToggle));
+    } else {
+        console.error('Elementi menu non trovati!');
+    }
 });
 
 // Back to Top Button
