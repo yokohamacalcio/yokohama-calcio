@@ -619,7 +619,22 @@ body {
     }
     
     .mobile-menu-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* NUOVO STILE PER GESTIONE ICONE (sostituisce le regole .fa-bars/.fa-times) */
+    .mobile-menu-toggle i {
+        transition: opacity 0.3s ease;
+        position: absolute;
+    }
+    
+    .mobile-menu-toggle i.hidden {
+        opacity: 0;
+        pointer-events: none;
     }
 
     .logo {
@@ -637,45 +652,30 @@ body {
     .main-nav {
         display: none;
         position: fixed;
-        top: 80px;
+        top: 130px; /* Regolato in base all'altezza dell'header */
         left: 0;
         right: 0;
         background: var(--bianco);
-        padding: 20px;
+        padding: 20px 5%;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         z-index: 999;
+        flex-direction: column;
+        gap: 15px;
+        max-height: calc(100vh - 130px);
+        overflow-y: auto;
     }
 
     .main-nav.active {
-        display: block;
+        display: flex;
         animation: fadeIn 0.3s ease-out;
-    }
-    
-    .mobile-menu-toggle i.fa-bars {
-        display: block;
-    }
-    
-    .mobile-menu-toggle i.fa-times {
-        display: none;
-    }
-    
-    .mobile-menu-toggle.active i.fa-bars {
-        display: none;
-    }
-    
-    .mobile-menu-toggle.active i.fa-times {
-        display: block;
     }
 
     .main-nav a {
-        padding: 15px;
+        padding: 12px;
         text-align: center;
-        font-size: 1.2rem;
-        color: var(--grigio);
-        border-radius: 8px;
-        transition: all 0.3s;
-        display: block;
-        margin-bottom: 10px;
+        font-size: 1.1rem;
+        border-radius: 4px;
+        background: rgba(0, 120, 215, 0.1);
     }
 
     .header-social-icons {
@@ -684,6 +684,8 @@ body {
 
     body.menu-open {
         overflow: hidden;
+        position: fixed;
+        width: 100%;
     }
     
     .hero {
@@ -738,6 +740,13 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
+    from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* NUOVA REGOLA PER DESKTOP (prevenire conflitti) */
+@media (min-width: 769px) {
+    .mobile-menu-toggle {
+        display: none !important;
+    }
 }
