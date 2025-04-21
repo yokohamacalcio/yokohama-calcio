@@ -222,6 +222,15 @@ body {
 
 .back-to-top i {
     font-size: 1.5rem;
+
+    /* Ottimizzazione mobile */
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+    }
 }
 
 /* ========== SECTIONS ========== */
@@ -635,20 +644,23 @@ body {
     }
 
     .main-nav {
+        .main-nav {
         display: none;
         position: fixed;
-        top: 80px;
+        top: 130px; /* Regola in base all'header */
         left: 0;
         right: 0;
-        background: var(--bianco);
+        background: white;
         padding: 20px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        z-index: 999;
+        z-index: 1000;
     }
 
     .main-nav.active {
-        display: block;
-        animation: fadeIn 0.3s ease-out;
+        display: block; /* O flex, a seconda del layout */
+    }
+
+    .mobile-menu-toggle .hidden {
+        display: none;
     }
     
     .mobile-menu-toggle i.fa-bars {
