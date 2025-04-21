@@ -31,6 +31,7 @@ body {
     z-index: 1000;
     background-color: var(--bianco);
     box-shadow: var(--ombra);
+    width: 100%;
 }
 
 /* ========== CONTAINER ========== */
@@ -38,7 +39,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 5%; /* Padding percentuale per adattarsi meglio */
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 /* ========== LOGO E TITOLO ========== */
@@ -46,43 +49,46 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+    flex-shrink: 0; /* Previene il ridimensionamento */
 }
 
 .logo {
-    height: 50px;
+    height: 55px; /* Leggermente più grande */
     width: auto;
 }
 
 .header h1 {
     color: var(--azzurro);
     margin: 0;
-    font-size: 1.5rem;
-    font-weight: 700; /* Grassetto */
-    letter-spacing: 0.5px; /* Migliora leggibilità */
-    text-transform: uppercase; /* Stile più elegante */
-    font-family: 'Montserrat', sans-serif; /* Font alternativo se disponibile */
+    font-size: 1.6rem; /* Leggermente più grande */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap; /* Previene il wrap del testo */
 }
 
 /* ========== NAV E SOCIAL - DESKTOP ========== */
 .desktop-nav-wrapper {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 30px; /* Più spazio tra menu e social */
 }
 
 .main-nav {
     display: flex;
-    gap: 25px;
-    margin-top: 15px;
+    gap: 30px; /* Più spazio tra voci menu */
+    margin: 0; /* Rimosso margin-top */
 }
 
 .main-nav a {
     color: var(--grigio);
     text-decoration: none;
     font-weight: bold;
-    padding-bottom: 5px;
+    padding: 5px 0;
     border-bottom: 2px solid transparent;
     transition: all 0.3s;
+    font-size: 1.1rem; /* Leggermente più grande */
 }
 
 .main-nav a:hover {
@@ -90,17 +96,15 @@ body {
     border-color: var(--azzurro);
 }
 
-
 .header-social-icons {
     display: flex;
-    gap: 15px;
-    margin-left: 20px;
+    gap: 20px; /* Più spazio tra icone */
 }
 
 .header-social-icons a {
     color: var(--azzurro);
-    font-size: 1.3rem;
-    transition: transform 0.3s;
+    font-size: 1.4rem; /* Leggermente più grande */
+    transition: all 0.3s;
 }
 
 .header-social-icons a:hover {
