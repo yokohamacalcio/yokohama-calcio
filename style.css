@@ -24,85 +24,78 @@ body {
     box-sizing: border-box;
 }
 
-/* ========== HEADER ========== */
-.header {
-    background: var(--bianco);
-    padding: 15px 0;
-    box-shadow: var(--ombra);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo-title {
+/* ========== HEADER LAYOUT MODIFICHE ========== */
+/* Container header */
+.header .container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 15px;
 }
 
-.logo {
-    height: 50px;
+/* Versione Desktop */
+@media (min-width: 769px) {
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .main-nav {
+        margin-top: 0;
+        order: 2;
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    .header-social-icons {
+        position: static;
+        transform: none;
+        order: 3;
+    }
 }
 
-.header h1 {
-    color: var(--azzurro);
-    margin: 0;
-    font-size: 1.5rem;
+/* Versione Mobile */
+@media (max-width: 768px) {
+    .header .container {
+        padding: 10px 15px;
+    }
+
+    .header-content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-menu-toggle {
+        order: 2;
+    }
+
+    .main-nav {
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+    }
 }
 
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--azzurro);
-    cursor: pointer;
-}
-
-.main-nav {
-    display: flex;
-    gap: 25px;
-    margin-top: 15px;
-}
-
-.main-nav a {
-    color: var(--grigio);
-    text-decoration: none;
-    font-weight: bold;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s;
-}
-
-.main-nav a:hover {
-    color: var(--azzurro);
-    border-color: var(--azzurro);
-}
-
+/* Social icons styling */
 .header-social-icons {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 .header-social-icons a {
-    color: #fff;
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
+    color: var(--azzurro) !important;
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
 }
 
 .header-social-icons a:hover {
-    color: #e74c3c;
-}
-
-/* Nascondi su mobile */
-@media (max-width: 768px) {
-    .header-social-icons {
-        display: none;
-    }
+    color: var(--azzurro-scuro) !important;
+    transform: translateY(-2px);
 }
 
 /* ========== HERO ========== */
