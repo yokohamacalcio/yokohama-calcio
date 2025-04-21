@@ -120,21 +120,10 @@ body {
     color: var(--azzurro);
     cursor: pointer;
     z-index: 1001;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-.mobile-menu-toggle i {
-    transition: all 0.3s ease;
-}
-
-.mobile-menu-toggle.active i {
-    transform: rotate(180deg);
 }
 
 /* ========== MOBILE VERSION ========== */
 @media (max-width: 768px) {
-    
     /* Regolazioni header */
     .logo {
         height: 40px;
@@ -144,11 +133,17 @@ body {
         font-size: 1.3rem;
     }
 
+    /* Nascondi elementi desktop */
     .desktop-nav-wrapper {
         display: none;
     }
 
-    /* Stile menu mobile */
+    /* Mostra hamburger */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    /* Stile menu mobile - APPROCCIO AFFIDABILE */
     .main-nav {
         display: none;
         position: fixed;
@@ -156,35 +151,41 @@ body {
         left: 0;
         right: 0;
         background: var(--bianco);
-        padding: 20px;
-        box-shadow: var(--ombra);
-        z-index: 1000;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 999;
         flex-direction: column;
         gap: 15px;
     }
 
     .main-nav.active {
-        opacity: 1;
-        transform: translateY(0);
+        display: flex;
     }
 
-    /* Icona hamburger animata */
-    .mobile-menu-toggle i {
-        transition: transform 0.3s ease;
+    /* Animazione icona affidabile */
+    .mobile-menu-toggle i.fa-bars {
+        display: block;
     }
     
-    .mobile-menu-toggle.active i {
-        transform: rotate(90deg);
+    .mobile-menu-toggle i.fa-times {
+        display: none;
+    }
+    
+    .mobile-menu-toggle.active i.fa-bars {
+        display: none;
+    }
+    
+    .mobile-menu-toggle.active i.fa-times {
+        display: block;
     }
 
     /* Stile link menu mobile */
     .main-nav a {
-        padding: 15px 20px;
+        padding: 12px 20px;
         text-align: center;
         font-size: 1.1rem;
         color: var(--grigio);
         font-weight: bold;
-        transition: all 0.3s ease;
     }
 
     .main-nav a:hover {
@@ -200,8 +201,6 @@ body {
     /* Blocca scroll quando menu è aperto */
     body.menu-open {
         overflow: hidden;
-        position: fixed;
-        width: 100%;
     }
 }
 
