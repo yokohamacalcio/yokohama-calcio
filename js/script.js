@@ -7,33 +7,41 @@ document.addEventListener('DOMContentLoaded', function() {
   // ======================
   // 1. HAMBURGER MENU (Funzionante)
   // ======================
+  document.addEventListener('DOMContentLoaded', function() {
+  // Menu Mobile Semplice
   const menuButton = document.querySelector('.mobile-menu-toggle');
   const mobileMenu = document.querySelector('.mobile-nav');
   
   if (menuButton && mobileMenu) {
-    const iconBars = menuButton.querySelector('.fa-bars');
-    const iconClose = menuButton.querySelector('.fa-times');
-
-    function toggleMenu() {
-      const isOpen = !mobileMenu.classList.contains('active');
-      mobileMenu.classList.toggle('active', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+    menuButton.addEventListener('click', function() {
+      // Toggle dello stato del menu
+      const isOpening = !mobileMenu.classList.contains('active');
       
-      if (iconBars) iconBars.classList.toggle('hidden', isOpen);
-      if (iconClose) iconClose.classList.toggle('hidden', !isOpen);
-    }
-
-    menuButton.addEventListener('click', function(e) {
-      e.stopPropagation();
-      toggleMenu();
+      // Gestione icona
+      const iconBars = this.querySelector('.fa-bars');
+      const iconTimes = this.querySelector('.fa-times');
+      
+      if (iconBars) iconBars.classList.toggle('hidden', isOpening);
+      if (iconTimes) iconTimes.classList.toggle('hidden', !isOpening);
+      
+      // Gestione menu
+      mobileMenu.classList.toggle('active', isOpening);
+      document.body.style.overflow = isOpening ? 'hidden' : '';
     });
-
+    
+    // Chiudi menu al click sui link
     document.querySelectorAll('.mobile-nav a').forEach(link => {
       link.addEventListener('click', function() {
-        toggleMenu();
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+        const iconBars = menuButton.querySelector('.fa-bars');
+        const iconTimes = menuButton.querySelector('.fa-times');
+        if (iconBars) iconBars.classList.remove('hidden');
+        if (iconTimes) iconTimes.classList.add('hidden');
       });
     });
   }
+});
 
   // ======================
   // 2. BACK TO TOP (Funzionante)
