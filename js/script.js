@@ -42,29 +42,27 @@ document.addEventListener('DOMContentLoaded', function() {
   // ======================
   // 2. BACK TO TOP (Isolato in una IIFE)
   // ======================
+// BACK TO TOP - Versione garantita
 document.addEventListener('DOMContentLoaded', function() {
-    // BACK TO TOP
-    const backToTopBtn = document.querySelector('.back-to-top');
-    if (backToTopBtn) {
-        function toggleBackToTop() {
-            backToTopBtn.classList.toggle('visible', window.scrollY > 300);
-        }
-        
-        window.addEventListener('scroll', toggleBackToTop);
-        backToTopBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+    const backToTop = document.querySelector('.back-to-top');
+    
+    if (backToTop) {
+        // Mostra/nascondi al scroll
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
         });
         
-        // Inizializza lo stato
-        toggleBackToTop();
-    }
-
-    // MOBILE MENU (separato ma nello stesso script)
-    const menuButton = document.querySelector('.mobile-menu-toggle');
-    if (menuButton) {
-        menuButton.addEventListener('click', function() {
-            document.querySelector('.mobile-nav').classList.toggle('active');
+        // Click per tornare su
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
 });
