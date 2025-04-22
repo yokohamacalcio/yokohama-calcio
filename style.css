@@ -710,12 +710,6 @@ body {
     }
 }
 
-/* Animazione */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 /* ========== MEDIA QUERIES ========== */
 @media (max-width: 992px) {
     .main-nav {
@@ -851,7 +845,8 @@ body {
     }
 }
 
+/* Animazione */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
+    from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
