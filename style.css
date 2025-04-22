@@ -8,6 +8,11 @@
     --ombra: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+/* ========== UTILITY CLASSES ========== */
+.hidden {
+    display: none !important;
+}
+
 /* ========== BASE ========== */
 body {
     font-family: 'Noto Sans JP', sans-serif;
