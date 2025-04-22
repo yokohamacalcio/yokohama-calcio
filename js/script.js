@@ -6,34 +6,16 @@
 // ======================
 // 1. MENU MOBILE (Hamburger)
 // ======================
-document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const toggleBtn = document.querySelector('.mobile-menu-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
-  const iconBars = menuToggle.querySelector('.fa-bars');
-  const iconTimes = menuToggle.querySelector('.fa-times');
+  const iconBars = toggleBtn.querySelector('.fa-bars');
+  const iconClose = toggleBtn.querySelector('.fa-times');
 
-  menuToggle.addEventListener('click', function() {
-    // Toggle menu visibility
+  toggleBtn.addEventListener('click', () => {
     mobileNav.classList.toggle('hidden');
-    
-    // Toggle icons
     iconBars.classList.toggle('hidden');
-    iconTimes.classList.toggle('hidden');
-    
-    // Toggle body scroll
-    document.body.style.overflow = mobileNav.classList.contains('hidden') ? '' : 'hidden';
+    iconClose.classList.toggle('hidden');
   });
-
-  // Close menu when clicking on links
-  document.querySelectorAll('.mobile-nav a').forEach(link => {
-    link.addEventListener('click', function() {
-      mobileNav.classList.add('hidden');
-      iconBars.classList.remove('hidden');
-      iconTimes.classList.add('hidden');
-      document.body.style.overflow = '';
-    });
-  });
-});
 
 // ======================
 // 2. BACK TO TOP BUTTON
