@@ -582,6 +582,7 @@ body {
     align-items: center;
 }
 
+/* Wrapper per logo e social */
 .footer-top {
     display: flex;
     align-items: center;
@@ -591,6 +592,7 @@ body {
     flex-wrap: wrap;
 }
 
+/* Logo proporzionato */
 .footer-logo-wrapper {
     display: flex;
     align-items: center;
@@ -601,34 +603,38 @@ body {
     width: auto;
 }
 
-.footer-social {
+/* Social link orizzontali */
+.social-links {
     display: flex;
     align-items: center;
     gap: 25px;
 }
 
-.footer-social a {
+.social-links a {
     color: var(--bianco);
     font-size: 1.8rem;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.footer-social a:hover {
+.social-links a:hover {
     color: #ff4500;
     transform: translateY(-3px);
 }
 
+/* Sezione copyright */
 .copyright-section {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     width: 100%;
+    text-align: center;
 }
 
 .copyright {
     color: var(--bianco);
     font-size: 0.9rem;
     margin-bottom: 0;
+    position: relative;
 }
 
 .credits {
@@ -641,6 +647,36 @@ body {
 .credits i.fa-heart {
     color: #e74c3c;
     margin: 0 3px;
+}
+
+/* ========== RESPONSIVE FOOTER ========== */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-logo {
+        height: 80px;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .social-links a {
+        font-size: 1.5rem;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+
+    .credits {
+        font-size: 0.7rem;
+    }
 }
 
 /* ========== MEDIA QUERIES ========== */
