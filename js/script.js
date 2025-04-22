@@ -6,41 +6,34 @@
 // ======================
 // 1. MENU MOBILE (Hamburger)
 // ======================
-function setupMobileMenu() {
-    const menuButton = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.main-nav');
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const iconBars = menuToggle.querySelector('.fa-bars');
+  const iconTimes = menuToggle.querySelector('.fa-times');
+
+  menuToggle.addEventListener('click', function() {
+    // Toggle menu visibility
+    mobileNav.classList.toggle('hidden');
     
-    if (!menuButton || !mobileMenu) {
-        console.warn('Elementi del menu mobile non trovati');
-        return;
-    }
+    // Toggle icons
+    iconBars.classList.toggle('hidden');
+    iconTimes.classList.toggle('hidden');
+    
+    // Toggle body scroll
+    document.body.style.overflow = mobileNav.classList.contains('hidden') ? '' : 'hidden';
+  });
 
-    const iconHamburger = menuButton.querySelector('.fa-bars');
-    const iconClose = menuButton.querySelector('.fa-times');
-
-    function toggleMenu() {
-        const isActive = mobileMenu.classList.toggle('active');
-        
-        // Gestione icone
-        if (iconHamburger) iconHamburger.classList.toggle('hidden', isActive);
-        if (iconClose) iconClose.classList.toggle('hidden', !isActive);
-        
-        // Blocco scroll
-        document.body.style.overflow = isActive ? 'hidden' : '';
-    }
-
-    menuButton.addEventListener('click', toggleMenu);
-
-    // Chiudi menu al click sui link
-    document.querySelectorAll('.main-nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-            if (iconHamburger) iconHamburger.classList.remove('hidden');
-            if (iconClose) iconClose.classList.add('hidden');
-        });
+  // Close menu when clicking on links
+  document.querySelectorAll('.mobile-nav a').forEach(link => {
+    link.addEventListener('click', function() {
+      mobileNav.classList.add('hidden');
+      iconBars.classList.remove('hidden');
+      iconTimes.classList.add('hidden');
+      document.body.style.overflow = '';
     });
-}
+  });
+});
 
 // ======================
 // 2. BACK TO TOP BUTTON
