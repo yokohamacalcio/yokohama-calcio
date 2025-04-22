@@ -42,24 +42,29 @@ document.addEventListener('DOMContentLoaded', function() {
   // ======================
   // 2. BACK TO TOP (Isolato in una IIFE)
   // ======================
-  (function setupBackToTop() {
+document.addEventListener('DOMContentLoaded', function() {
+    // BACK TO TOP
     const backToTopBtn = document.querySelector('.back-to-top');
-    if (!backToTopBtn) return;
-
-    function handleScroll() {
-      backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+    if (backToTopBtn) {
+        function toggleBackToTop() {
+            backToTopBtn.classList.toggle('visible', window.scrollY > 300);
+        }
+        
+        window.addEventListener('scroll', toggleBackToTop);
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Inizializza lo stato
+        toggleBackToTop();
     }
 
-    function scrollToTop(e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // MOBILE MENU (separato ma nello stesso script)
+    const menuButton = document.querySelector('.mobile-menu-toggle');
+    if (menuButton) {
+        menuButton.addEventListener('click', function() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        });
     }
-
-    // Event listeners con namespace univoco
-    window.addEventListener('scroll.backToTop', handleScroll);
-    backToTopBtn.addEventListener('click.backToTop', scrollToTop);
-    
-    // Inizializzazione
-    handleScroll();
-  })();
 });
