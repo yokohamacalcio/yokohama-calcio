@@ -271,19 +271,18 @@ body {
     right: 30px;
     width: 50px;
     height: 50px;
-    background-color: var(--azzurro);
+    background-color: #0078D7;
     color: white;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: var(--ombra);
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    z-index: 9999; /* Valore molto alto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .back-to-top.visible {
@@ -291,9 +290,8 @@ body {
     visibility: visible;
 }
 
-.back-to-top:hover,
-.back-to-top:focus {
-    background-color: var(--azzurro-scuro);
+.back-to-top:hover {
+    background-color: #005AAB;
     transform: translateY(-3px);
 }
 
