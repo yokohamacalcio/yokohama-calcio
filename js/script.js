@@ -42,27 +42,30 @@ document.addEventListener('DOMContentLoaded', function() {
   // ======================
   // 2. BACK TO TOP (Isolato in una IIFE)
   // ======================
-// BACK TO TOP - Versione garantita
-document.addEventListener('DOMContentLoaded', function() {
+  (function setupBackToTop() {
     const backToTop = document.querySelector('.back-to-top');
     
-    if (backToTop) {
-        // Mostra/nascondi al scroll
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-        
-        // Click per tornare su
-        backToTop.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-});
+    if (!backToTop) return;
+
+    // Mostra/nascondi al scroll
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    
+    // Click per tornare su
+    backToTop.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Inizializza lo stato
+    backToTop.classList.toggle('visible', window.pageYOffset > 300);
+  })();
+}); // <-- Questa era la parentesi mancante
