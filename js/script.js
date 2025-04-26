@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // ======================
   // 1. HAMBURGER MENU (Funzionante)
   // ======================
-  document.addEventListener('DOMContentLoaded', function() {
   // Menu Mobile Semplice
   const menuButton = document.querySelector('.mobile-menu-toggle');
   const mobileMenu = document.querySelector('.mobile-nav');
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
-});
 
   // ======================
   // 2. BACK TO TOP (Funzionante)
